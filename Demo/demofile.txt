@@ -1,0 +1,125 @@
+*** Settings ***
+Library           OperatingSystem
+Library           AppiumLibrary
+Library           Selenium2Library
+Library           ../../../../../../../Python27/Lib/site-packages/TestLibrary/ShowText.py
+
+*** Variables ***
+${Expect}         Test    # Expect for TestCase"DemoLV.2"
+${Wait}           2    # Wait for Screen display
+@{ExpectPackage}    ค่ารายเดือน688บ.โทร+VDO Call 300นาที เน็ตรวม20GB ใช้พื้นที่4G/3Gได้16GB และพื้นที่4Gได้4GB (เมื่อใช้ครบเน็ตหยุดทันที) AIS SUPER WiFiไม่จำกัด AIS Cloud+ 100GB ดูหนังจากAIS Play4เรื่อง/สัปดาห์ ส่วนเกินโทร1.5บ./นาที SMS3บ. MMS4บ. เน็ต99บ./GB นาน12รอบบิล    แพ็กเสริม คุยฟรีกลางวัน 199 บาท โทรฟรีกลางวันในเครือข่าย AIS 5.00-17.00 น.    แพ็กเกจซีรีส์ฮอลลีวูดบนมือถือ 159 บาท/เดือน
+${ExpectPage}     Voice Call
+${QueryPackage}    Your requested transaction is not found.
+${q}              3
+
+*** Test Cases ***
+Test1
+    Open Application    http://localhost:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice    appActivity=com.nextzy.allforone.view.DummyActivity
+    ...    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity
+    AppiumLibrary.Click Element    xpath=//android.widget.ImageView[@content-desc="eService"]
+    Sleep    10    error=wait for progressbar loading
+    AppiumLibrary.Wait Until Page Contains    eService
+    AppiumLibrary.Click Element    xpath=//android.widget.TextView[@text="Promotion"]
+    AppiumLibrary.Click Element    xpath=//android.widget.TextView[@text="• Current Promotion"]
+    Sleep    5
+    AppiumLibrary.Swipe    0    1279    0    0.2    duration=300
+    AppiumLibrary.Click Element    name=Apply Package
+    Sleep    10
+    AppiumLibrary.Click Element    name=Internet Packages
+    Sleep    10
+    AppiumLibrary.Click Element    name=Mao Mao One-Time Pack
+    AppiumLibrary.Click Element    name=Mao Mao Max Speed \ 9 B. Net 100MB for 24 hours
+    Run Keyword If    '${QueryPackage}' =='Your requested transaction is not found.'
+
+Test2
+    Open Browser    https://www.google.co.th    gc
+    Maximize Browser Window
+    Selenium2Library.Input Text    xpath= //*[@id="lst-ib"]    Test
+    Selenium2Library.Click Button    xpath=//*[@class="lsb"]
+    Sleep    ${Wait}
+    Selenium2Library.Go Back
+    Sleep    ${Wait}
+    Selenium2Library.Input Text    xpath= //*[@id="lst-ib"]    Robot FrameWork
+    Selenium2Library.Click Button    xpath=//*[@class="lsb"]
+    Sleep    ${Wait}
+    Close Browser
+
+DemoLV.1(Web)
+    Open Browser    https://www.google.co.th    gc
+    Maximize Browser Window
+    Selenium2Library.Input Text    xpath= //*[@id="lst-ib"]    Test
+    Selenium2Library.Click Button    xpath=//*[@class="lsb"]
+    ${Actual}    Get Value    xpath=//*[@id="lst-ib"]
+    Should Be Equal    ${Expect}    ${Actual}
+    Sleep    ${Wait}
+    Selenium2Library.Go Back
+    Sleep    ${Wait}
+    Close Browser
+
+DemoLV.2(Mobile)
+    Open Application    http://localhost:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice    appActivity=com.nextzy.allforone.view.DummyActivity
+    ...    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity
+    AppiumLibrary.Click Element    xpath=//android.widget.ImageView[@content-desc="eService"]
+    Sleep    10    wait for progressbar loading
+    AppiumLibrary.Wait Until Page Contains    eService
+    AppiumLibrary.Click Element    xpath=//android.widget.TextView[@text="Usage Detail History"]
+    AppiumLibrary.Click Element    xpath=//android.widget.TextView[@text="• Voice Call"]
+    AppiumLibrary.Wait Until Page Contains    Please enter your ID number.
+    AppiumLibrary.Input Text    xpath=//android.widget.EditText[@text="Please enter your ID number."]    1199900257976
+    AppiumLibrary.Go Back    #Workaround
+    AppiumLibrary.Click Element    xpath=//android.widget.Button[@text="OK"]
+    AppiumLibrary.Element Name Should Be    name=Voice Call    Voice Call
+    AppiumLibrary.Close All Applications
+
+DemoLV.3(Mobile)
+    Open Application    http://localhost:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice    appActivity=com.nextzy.allforone.view.DummyActivity
+    ...    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity
+    AppiumLibrary.Click Element    xpath=//android.widget.ImageView[@content-desc="eService"]
+    Sleep    10    error=wait for progressbar loading
+    AppiumLibrary.Wait Until Page Contains    eService
+    AppiumLibrary.Click Element    xpath=//android.widget.TextView[@text="Promotion"]
+    AppiumLibrary.Click Element    xpath=//android.widget.TextView[@text="• Current Promotion"]
+    Sleep    5
+    AppiumLibrary.Click Element    name=Change Promotion
+    Sleep    10
+    AppiumLibrary.Click Element    name=Voice Promotion
+    Sleep    10
+    AppiumLibrary.Click Element    name=Call to AIS
+    AppiumLibrary.Wait Until Page Contains Element    xpath=//android.widget.TextView[@text="Best-Value Talk Package"]    timeout=30
+    AppiumLibrary.Click Element    name=Bast-Value Talk Package
+
+DemoLV.4 (Mobile&Web)
+    Open Browser    https://eservice.ais.co.th/eServiceWeb/    gc
+    Maximize Browser Window
+    Select Frame    id=MainIframe
+    Selenium2Library.Input Text    xpath= //*[@id="textfield"]    0613851273
+    Selenium2Library.Click Element    id=btnLoginGetOtpMethod
+    Open Application    http://localhost:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= 33006f70b26213af    appPackage=com.calea.echo    appActivity=com.calea.echo.MainActivity
+    AppiumLibrary.Click Element    xpath=//*[@text="AIS"]
+    Sleep    20
+    Selenium2Library.Click Element    id=lnkLoginLoginWithOtp
+    Selenium2Library.Wait Until Page Contains    แพ็กเกจปัจจุบันและบริการเสริม    300
+    ${ActualPackage1}    Selenium2Library.Get Text    xpath=//*[@id="txtPackDescription0"]
+    Should Be Equal    @{ExpectPackage}    ${ActualPackage1}
+    ${ActualPackage2}    Selenium2Library.Get Text    xpath=//*[@id="txtPackDescription1"]
+    Should Be Equal    @{ExpectPackage}    ${ActualPackage2}
+
+Testmon
+    Open Application    http://localhost:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.calea.echo    appActivity=com.calea.echo.MainActivity
+    AppiumLibrary.Click Element    name=AIS
+    ${L}    AppiumLibrary.Get Element Attribute    xpath=//android.widget.TextView[@resource-id="com.calea.echo:id/content"]    text
+    @{List}=    AppiumLibrary.Get Elements    id=com.calea.echo:id/content
+    : FOR    ${Var}    IN    @{List}
+    \    log    ${Var}
+    AppiumLibrary.Get Element Attribute    ${Var}    name
+    ${count}=    Set Variable    0
+    ${count}=    Set Variable    ${count++}
+    Log    ${count}
+    Run Keyword If    '${count}'=='${Var}'    Exit For Loop
+    AppiumLibrary.Get Element Attribute    \    name
+    For-Loop-In-Range
+    : FOR    ${INDEX}    IN RANGE    1    3
+
+*** Keywords ***
+Set Environment Variable
+    webdriver.chrome.driver    ${BIN_DIR}/chromedriver.exe
