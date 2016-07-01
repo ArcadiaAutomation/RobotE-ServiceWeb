@@ -2,7 +2,7 @@
 Library           OperatingSystem
 Library           AppiumLibrary
 Library           Selenium2Library
-Library           ../../../../../../../Python27/Lib/site-packages/TestLibrary/ShowText.py
+Library           ../Library/ShowText.py
 
 *** Variables ***
 ${Expect}         Test    # Expect for TestCase"DemoLV.2"
