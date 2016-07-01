@@ -45,6 +45,7 @@ Test2
     Close Browser
 
 DemoLV.1(Web)
+    [Tags]    demo
     Open Browser    https://www.google.co.th    gc
     Maximize Browser Window
     Selenium2Library.Input Text    xpath= //*[@id="lst-ib"]    Test
@@ -57,6 +58,7 @@ DemoLV.1(Web)
     Close Browser
 
 DemoLV.2(Mobile)
+    [Tags]    demo
     Open Application    http://localhost:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice    appActivity=com.nextzy.allforone.view.DummyActivity
     ...    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity
     AppiumLibrary.Click Element    xpath=//android.widget.ImageView[@content-desc="eService"]
