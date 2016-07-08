@@ -1,2 +1,5 @@
 *.pyc
 *.pyc
+Library/ShowMe.pyc
+Library/ShowText.pyc
+*.pyc
