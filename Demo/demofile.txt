@@ -35,6 +35,7 @@ DemoLV.1(Web)
     Close Browser
 
 DemoLV.2(Mobile)
+    [Tags]    demo
     Open Application    http://localhost:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice    appActivity=com.nextzy.allforone.view.DummyActivity
     ...    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=3300fa759464132d
     AppiumLibrary.Click Element    xpath=//android.widget.ImageView[@content-desc="eService"]
@@ -52,6 +53,7 @@ DemoLV.2(Mobile)
 
 DemoLV.3(Mobile)
     [Documentation]    This script for subscribe Main package ( "Best-Value Talk Package" ) after that will subscribe default to \ package ( "Talk-2-Gang" )
+    [Tags]
     Open Application    http://localhost:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice    appActivity=com.nextzy.allforone.view.DummyActivity
     ...    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=3300fa759464132d
     Sleep    5
@@ -138,6 +140,7 @@ DemoLV.3(Mobile)
     Sleep    5
 
 DemoLV.4 (Mobile&Web)
+    [Tags]    demo
     Open Browser    https://eservice.ais.co.th/eServiceWeb/    gc
     Maximize Browser Window
     Select Frame    id=MainIframe
