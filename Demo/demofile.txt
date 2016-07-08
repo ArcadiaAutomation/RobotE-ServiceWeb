@@ -1,4 +1,4 @@
-﻿*** Settings ***
+*** Settings ***
 Library           OperatingSystem
 Library           ../../../../../../../Python27/Lib/site-packages/TestLibrary/GetSMSfromMOOD.py
 Library           string
@@ -20,9 +20,8 @@ ${DestNumber}     0614243445
 ${DefaultMainPackage}    Talk-2-Gang
 
 *** Test Cases ***
-
-
 DemoLV.1(Web)
+    [Tags]    demo
     Open Browser    https://www.google.co.th    gc
     Maximize Browser Window
     Selenium2Library.Input Text    xpath= //*[@id="lst-ib"]    Test
@@ -180,7 +179,6 @@ MultiDevice
     ...    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=0123456789ABCDEF
     Sleep    5
     Close Application
-
 
 *** Keywords ***
 Set Environment Variable
