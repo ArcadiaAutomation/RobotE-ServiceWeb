@@ -38,14 +38,14 @@ DemoLV.1(Web)
 DemoLV.2(Mobile)
     [Documentation]    Checking Usage Detail
     [Tags]    demo
-    Open Application    http://10.239.223.84:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice    appActivity=com.nextzy.allforone.view.DummyActivity
+    Open Application    http://10.239.123.130:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice    appActivity=com.nextzy.allforone.view.DummyActivity
     ...    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=3300fa759464132d
     AppiumLibrary.Click Element    xpath=//android.widget.ImageView[@content-desc="eService"]
     Sleep    10    wait for progressbar loading
     AppiumLibrary.Wait Until Page Contains    eService
     AppiumLibrary.Click Element    xpath=//android.widget.TextView[@text="Usage Detail History"]
     AppiumLibrary.Click Element    xpath=//android.widget.TextView[@text="• Voice Call"]
-    AppiumLibrary.Wait Until Page Contains    Please enter your ID number.
+    AppiumLibrary.Wait Until Page Contains    Please enter your ID number.    10
     AppiumLibrary.Input Text    xpath=//android.widget.EditText[@text="Please enter your ID number."]    1199900257976
     AppiumLibrary.Go Back
     AppiumLibrary.Click Element    xpath=//android.widget.Button[@text="OK"]
@@ -56,7 +56,7 @@ DemoLV.2(Mobile)
 DemoLV.3(Mobile)
     [Documentation]    Change Main package ( "Best-Value Talk Package" ) after that will subscribe default to \ package ( "Talk-2-Gang" )
     [Tags]
-    Open Application    http://10.239.223.84:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice    appActivity=com.nextzy.allforone.view.DummyActivity
+    Open Application    http://10.239.123.130:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice    appActivity=com.nextzy.allforone.view.DummyActivity
     ...    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=3300fa759464132d
     Sleep    5
     AppiumLibrary.Click Element    xpath=//android.widget.ImageView[@content-desc="eService"]
@@ -98,7 +98,7 @@ DemoLV.3(Mobile)
     ${SMSConfirmPackage}    Getsms    AIS    1    3300fa759464132d
     Log    ${SMSConfirmPackage}
     Sleep    5
-    Open Application    http://10.239.223.84:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice    appActivity=com.nextzy.allforone.view.DummyActivity
+    Open Application    http://10.239.123.130:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice    appActivity=com.nextzy.allforone.view.DummyActivity
     ...    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=3300fa759464132d
     Sleep    5
     AppiumLibrary.Click Element    xpath=//android.widget.ImageView[@content-desc="eService"]
@@ -144,7 +144,7 @@ DemoLV.3(Mobile)
 DemoLV.3.1(Mobile MultiDevices)
     [Documentation]    Balance Transfer
     [Tags]
-    Open Application    http://10.239.223.84:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice    appActivity=com.nextzy.allforone.view.DummyActivity
+    Open Application    http://10.239.123.130:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice    appActivity=com.nextzy.allforone.view.DummyActivity
     ...    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=3300fa759464132d
     Sleep    5
     AppiumLibrary.Click Element    xpath=//android.widget.ImageView[@content-desc="eService"]
