@@ -55,7 +55,7 @@ DemoLV.2(Mobile)
 
 DemoLV.3(Mobile)
     [Documentation]    Change Main package ( "Best-Value Talk Package" ) after that will subscribe default to \ package ( "Talk-2-Gang" )
-    [Tags]
+    [Tags]    long
     Open Application    http://10.239.123.130:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice    appActivity=com.nextzy.allforone.view.DummyActivity
     ...    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=3300fa759464132d
     Sleep    5
@@ -143,7 +143,7 @@ DemoLV.3(Mobile)
 
 DemoLV.3.1(Mobile MultiDevices)
     [Documentation]    Balance Transfer
-    [Tags]
+    [Tags]    long
     Open Application    http://10.239.123.130:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice    appActivity=com.nextzy.allforone.view.DummyActivity
     ...    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=3300fa759464132d
     Sleep    5
@@ -190,7 +190,7 @@ DemoLV.4(Mobile&Web)
 
 DemoLV.4.1(Mobile&Web)
     [Documentation]    Balance Transfer
-    [Tags]    demo
+    [Tags]    long
     Open Browser    https://eservice.ais.co.th/eServiceWeb/    gc
     Maximize Browser Window
     Select Frame    id=MainIframe
@@ -225,7 +225,7 @@ DemoLV.4.1(Mobile&Web)
 
 DemoLV.4.2(Mobile&Web)
     [Documentation]    Change Main \ Promotion
-    [Tags]    demo
+    [Tags]    long
     Open Browser    https://eservice.ais.co.th/eServiceWeb/    gc
     Maximize Browser Window
     Select Frame    id=MainIframe
