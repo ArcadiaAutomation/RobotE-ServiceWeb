@@ -11,13 +11,14 @@ Library           ../../../../../../../Python27/Lib/site-packages/TestLibrary/ge
 *** Variables ***
 ${Expect}         Test    # Expect for TestCase"DemoLV.2"
 ${Wait}           2    # Wait for Screen display
-@{ExpectPackage}    3Gโทรคุ้ม[AIS 3B/10min,1B/min OTH1.25B/min ExVAT]
+@{ExpectPackage}    3Gโทรยกแก๊ง_MF[InGroup 1/0.25B OTH 2/1B Inc.VAT]
 ${ExpectPage}     Voice Call
 ${QueryPackage}    Your requested transaction is not found.
 ${ExpectMessage}    Transaction processed successfully. Please wait for a confirmation SMS .
 ${MainPackage}    Best-Value Talk Package
 ${DestNumber}     0614243445
 ${DefaultMainPackage}    Talk-2-Gang
+${ExpectMessageWeb}    ดำเนินการเรียบร้อยแล้ว
 
 *** Test Cases ***
 DemoLV.1(Web)
@@ -35,8 +36,9 @@ DemoLV.1(Web)
     Close Browser
 
 DemoLV.2(Mobile)
+    [Documentation]    Checking Usage Detail
     [Tags]    demo
-    Open Application    http://localhost:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice    appActivity=com.nextzy.allforone.view.DummyActivity
+    Open Application    http://10.239.223.183:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice    appActivity=com.nextzy.allforone.view.DummyActivity
     ...    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=3300fa759464132d
     AppiumLibrary.Click Element    xpath=//android.widget.ImageView[@content-desc="eService"]
     Sleep    10    wait for progressbar loading
@@ -52,9 +54,9 @@ DemoLV.2(Mobile)
     AppiumLibrary.Close All Applications
 
 DemoLV.3(Mobile)
-    [Documentation]    This script for subscribe Main package ( "Best-Value Talk Package" ) after that will subscribe default to \ package ( "Talk-2-Gang" )
+    [Documentation]    Change Main package ( "Best-Value Talk Package" ) after that will subscribe default to \ package ( "Talk-2-Gang" )
     [Tags]
-    Open Application    http://localhost:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice    appActivity=com.nextzy.allforone.view.DummyActivity
+    Open Application    http://10.239.223.183:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice    appActivity=com.nextzy.allforone.view.DummyActivity
     ...    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=3300fa759464132d
     Sleep    5
     AppiumLibrary.Click Element    xpath=//android.widget.ImageView[@content-desc="eService"]
@@ -96,7 +98,7 @@ DemoLV.3(Mobile)
     ${SMSConfirmPackage}    Getsms    AIS    1    3300fa759464132d
     Log    ${SMSConfirmPackage}
     Sleep    5
-    Open Application    http://localhost:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice    appActivity=com.nextzy.allforone.view.DummyActivity
+    Open Application    http://10.239.223.183:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice    appActivity=com.nextzy.allforone.view.DummyActivity
     ...    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=3300fa759464132d
     Sleep    5
     AppiumLibrary.Click Element    xpath=//android.widget.ImageView[@content-desc="eService"]
@@ -115,7 +117,7 @@ DemoLV.3(Mobile)
     Sleep    5
     ${Var2}=    AppiumLibrary.Get Element Attribute    xpath=//android.widget.TextView[@resource-id="com.ais.mimo.eservice:id/txt_pack_item"]    text
     : FOR    ${loop2}    IN RANGE    3
-    \    ${LoopCondition2} =    Run Keyword If    '${var1}' == '${DefaultMainPackage}'    Exit For Loop
+    \    ${LoopCondition2} =    Run Keyword If    '${var2}' == '${DefaultMainPackage}'    Exit For Loop
     \    AppiumLibrary.Go Back
     \    AppiumLibrary.Wait Until Page Contains Element    name=Change Promotion    20
     \    AppiumLibrary.Click Element    name=Change Promotion
@@ -139,7 +141,55 @@ DemoLV.3(Mobile)
     Log    ${SMSConfirmDefaultPackage}
     Sleep    5
 
-DemoLV.4 (Mobile&Web)
+DemoLV.3.1(Mobile MultiDevices)
+    [Documentation]    Balance Transfer
+    [Tags]
+    Open Application    http://10.239.223.183:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice    appActivity=com.nextzy.allforone.view.DummyActivity
+    ...    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=3300fa759464132d
+    Sleep    5
+    AppiumLibrary.Click Element    xpath=//android.widget.ImageView[@content-desc="eService"]
+    AppiumLibrary.Wait Until Page Contains    eService    20
+    AppiumLibrary.Click Element    xpath=//android.widget.TextView[@text="Balance & Validity Transfer"]
+    AppiumLibrary.Wait Until Page Contains Element    xpath=//android.widget.TextView[@text="• Validity Transfer"]    20
+    AppiumLibrary.Click Element    xpath=//android.widget.TextView[@text="• Validity Transfer"]
+    AppiumLibrary.Wait Until Page Contains Element    name=Mobile Number    20
+    AppiumLibrary.Input Text    name=Mobile Number    ${DestNumber}
+    AppiumLibrary.Go Back
+    AppiumLibrary.Wait Until Page Contains Element    name=Select Days    20
+    AppiumLibrary.Click Element    name=Select Days
+    AppiumLibrary.Wait Until Page Contains Element    xpath=//android.widget.TextView[@text="5"]    20
+    AppiumLibrary.Click Element    xpath=//android.widget.TextView[@text="5"]
+    AppiumLibrary.Wait Until Page Contains Element    xpath=//android.widget.Button[@text="OK"]    20
+    AppiumLibrary.Click Element    xpath=//android.widget.Button[@text="OK"]
+    AppiumLibrary.Wait Until Page Contains Element    xpath=//android.widget.Button[@resource-id="com.ais.mimo.eservice:id/btn_positive"]    20
+    AppiumLibrary.Click Element    xpath=//android.widget.Button[@resource-id="com.ais.mimo.eservice:id/btn_positive"]
+    AppiumLibrary.Wait Until Page Contains Element    xpath=//android.widget.TextView[@resource-id="com.ais.mimo.eservice:id/tv_dialog_message"]
+    ${Message}    AppiumLibrary.Get Element Attribute    xpath=//android.widget.TextView[@resource-id="com.ais.mimo.eservice:id/tv_dialog_message"]    name
+    Log To Console    ${Message}
+    AppiumLibrary.Click Element    xpath=//android.widget.Button[@resource-id="com.ais.mimo.eservice:id/btn_neutral"]
+    Sleep    10
+    ${SMS}    Getsms    AIS    1    33006f70b26213af
+    Log To Console    ${SMS}
+
+DemoLV.4(Mobile&Web)
+    [Documentation]    login
+    [Tags]    demo
+    Open Browser    https://eservice.ais.co.th/eServiceWeb/    gc
+    Maximize Browser Window
+    Select Frame    id=MainIframe
+    Selenium2Library.Input Text    xpath= //*[@id="textfield"]    0927099699
+    Selenium2Library.Click Element    id=btnLoginGetOtpMethod
+    Sleep    5
+    ${OTPMessage}    Getsms    AIS    1    3300fa759464132d
+    ${OTP}    getOTPinSMS    ${OTPMessage}
+    Log To Console    ${OTP}
+    Selenium2Library.Input Text    xpath=//*[@id="inputOtpNumber"]    ${OTP}
+    Selenium2Library.Click Element    id=lnkLoginLoginWithOtp
+    Sleep    5
+    Selenium2Library.Close Browser
+
+DemoLV.4.1(Mobile&Web)
+    [Documentation]    Balance Transfer
     [Tags]    demo
     Open Browser    https://eservice.ais.co.th/eServiceWeb/    gc
     Maximize Browser Window
@@ -168,10 +218,86 @@ DemoLV.4 (Mobile&Web)
     Selenium2Library.Click Element    xpath=//*[@id="main"]/div[2]/section/div/div[3]/div/div[2]/div[3]/div/div/div/div/div/div/div[2]/a[1]
     Selenium2Library.Wait Until Page Contains Element    xpath=//*[@id="labTransferResultDesc1"]    10
     Sleep    5
-    Close Browser
+    Selenium2Library.Close Browser
     Sleep    10
     ${MessageDestNumber}    Getsms    AIS    1    33006f70b26213af
     Log To Console    ${MessageDestNumber}
+
+DemoLV.4.2(Mobile&Web)
+    [Documentation]    Change Main \ Promotion
+    [Tags]    demo
+    Open Browser    https://eservice.ais.co.th/eServiceWeb/    gc
+    Maximize Browser Window
+    Select Frame    id=MainIframe
+    Selenium2Library.Input Text    xpath= //*[@id="textfield"]    0927099699
+    Selenium2Library.Click Element    id=btnLoginGetOtpMethod
+    Sleep    5
+    ${OTPMessage}    Getsms    AIS    1    3300fa759464132d
+    ${OTP}    getOTPinSMS    ${OTPMessage}
+    Log To Console    ${OTP}
+    Selenium2Library.Input Text    xpath=//*[@id="inputOtpNumber"]    ${OTP}
+    Selenium2Library.Click Element    id=lnkLoginLoginWithOtp
+    Sleep    5
+    Selenium2Library.Wait Until Page Contains    แพ็กเกจปัจจุบันและบริการเสริม    300
+    ${ActualPackage1}    Selenium2Library.Get Text    xpath=//*[@id="txtPackNameNotDescription"]
+    Should Be Equal    @{ExpectPackage}    ${ActualPackage1}
+    Selenium2Library.Wait Until Page Contains Element    xpath=//*[@id="menu-85"]    20
+    Selenium2Library.Click Element    xpath=//*[@id="menu-85"]
+    Selenium2Library.Wait Until Element Is Visible    xpath=//*[@id="menu-135"]    20
+    Selenium2Library.Click Element    xpath=//*[@id="menu-135"]
+    Selenium2Library.Wait Until Page Contains Element    xpath=//*[@id="ddlChangPackGroupA"]    20
+    Selenium2Library.Click Element    xpath=//*[@id="ddlChangPackGroupA"]/option[1]
+    Selenium2Library.Click Element    xpath=//*[@id="ddlChangPackGroupB"]/option[3]
+    Selenium2Library.Wait Until Page Contains Element    xpath=//*[@id="trManagePackList0"]/td[5]/label    10
+    Selenium2Library.Click Element    xpath=//*[@id="trManagePackList0"]/td[5]/label
+    Selenium2Library.Click Element    xpath=//*[@id="btnChangePackConfirm"]/div
+    Selenium2Library.Wait Until Page Contains Element    xpath=//*[@id="btnChangePackConfirmPackDate"]    10
+    Selenium2Library.Click Element    xpath=//*[@id="btnChangePackConfirmPackDate"]
+    Selenium2Library.Wait Until Page Contains Element    xpath=//*[@id="tbSelectedPackageStepFour"]/tbody/tr/td[4]/div    20
+    ${ConfirmMsgWeb}    Selenium2Library.Get Text    xpath=//*[@id="tbSelectedPackageStepFour"]/tbody/tr/td[4]/div
+    Log To Console    ${ConfirmMsgWeb}
+    sleep    3
+    Selenium2Library.Capture Page Screenshot
+    Selenium2Library.Close Browser
+    Sleep    10
+    ${SMSConfirmPackage}    Getsms    AIS    1    3300fa759464132d
+    Log To Console    ${SMSConfirmPackage}
+    Open Browser    https://eservice.ais.co.th/eServiceWeb/    gc
+    Maximize Browser Window
+    Select Frame    id=MainIframe
+    Selenium2Library.Input Text    xpath= //*[@id="textfield"]    0927099699
+    Selenium2Library.Click Element    id=btnLoginGetOtpMethod
+    Sleep    5
+    ${OTPMessage}    Getsms    AIS    1    3300fa759464132d
+    ${OTP}    getOTPinSMS    ${OTPMessage}
+    Log To Console    ${OTP}
+    Selenium2Library.Input Text    xpath=//*[@id="inputOtpNumber"]    ${OTP}
+    Selenium2Library.Click Element    id=lnkLoginLoginWithOtp
+    Sleep    5
+    Selenium2Library.Wait Until Page Contains    แพ็กเกจปัจจุบันและบริการเสริม    300
+    Selenium2Library.Wait Until Page Contains Element    xpath=//*[@id="menu-85"]    20
+    Selenium2Library.Click Element    xpath=//*[@id="menu-85"]
+    Selenium2Library.Wait Until Element Is Visible    xpath=//*[@id="menu-135"]    20
+    Selenium2Library.Click Element    xpath=//*[@id="menu-135"]
+    Selenium2Library.Wait Until Page Contains Element    xpath=//*[@id="ddlChangPackGroupA"]    20
+    Selenium2Library.Click Element    xpath=//*[@id="ddlChangPackGroupA"]/option[1]
+    Selenium2Library.Click Element    xpath=//*[@id="ddlChangPackGroupB"]/option[3]
+    Selenium2Library.Wait Until Page Contains Element    xpath=//*[@id="trManagePackList0"]/td[5]/label    10
+    ${GetActualMainPackage}    Selenium2Library.Get Text    xpath=//*[@id="tdManagePackName"]/span
+    Should Be Equal    ${GetActualMainPackage}    โปรโทรยกแก๊งค์
+    Selenium2Library.Click Element    xpath=//*[@id="trManagePackList0"]/td[5]/label
+    Selenium2Library.Click Element    xpath=//*[@id="btnChangePackConfirm"]/div
+    Selenium2Library.Wait Until Page Contains Element    xpath=//*[@id="btnChangePackConfirmPackDate"]    10
+    Selenium2Library.Click Element    xpath=//*[@id="btnChangePackConfirmPackDate"]
+    Selenium2Library.Wait Until Page Contains Element    xpath=//*[@id="tbSelectedPackageStepFour"]/tbody/tr/td[4]/div    20
+    ${ConfirmMsgWeb}    Selenium2Library.Get Text    xpath=//*[@id="tbSelectedPackageStepFour"]/tbody/tr/td[4]/div
+    Log To Console    ${ConfirmMsgWeb}
+    sleep    3
+    Selenium2Library.Capture Page Screenshot
+    Selenium2Library.Close Browser
+    Sleep    10
+    ${SMSConfirmDefaultPackage}    Getsms    AIS    1    3300fa759464132d
+    Log To Console    ${SMSConfirmDefaultPackage}
 
 MultiDevice
     Open Application    http://localhost:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice    appActivity=com.nextzy.allforone.view.DummyActivity
