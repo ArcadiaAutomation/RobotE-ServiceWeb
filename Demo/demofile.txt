@@ -44,6 +44,7 @@ DemoLV.2(Mobile)
     Sleep    10    wait for progressbar loading
     AppiumLibrary.Wait Until Page Contains    eService
     AppiumLibrary.Click Element    xpath=//android.widget.TextView[@text="Usage Detail History"]
+    AppiumLibrary.Wait Until Page Contains    xpath=//android.widget.TextView[@text="• Voice Call"]    10
     AppiumLibrary.Click Element    xpath=//android.widget.TextView[@text="• Voice Call"]
     AppiumLibrary.Wait Until Page Contains    Please enter your ID number.    10
     AppiumLibrary.Input Text    xpath=//android.widget.EditText[@text="Please enter your ID number."]    1199900257976
