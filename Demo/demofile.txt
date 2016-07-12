@@ -38,7 +38,7 @@ DemoLV.1(Web)
 DemoLV.2(Mobile)
     [Documentation]    Checking Usage Detail
     [Tags]    demo
-    Open Application    http://10.239.123.130:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice    appActivity=com.nextzy.allforone.view.DummyActivity
+    Open Application    http://10.239.123.129:4723/wd/hub    platformName=Android    platformVersion=5.1.1    deviceName= any    appPackage=com.ais.mimo.eservice    appActivity=com.nextzy.allforone.view.DummyActivity
     ...    appWaitActivity=com.nextzy.allforone.view.menu.MenuActivity    udid=3300fa759464132d
     AppiumLibrary.Click Element    xpath=//android.widget.ImageView[@content-desc="eService"]
     Sleep    10    wait for progressbar loading
