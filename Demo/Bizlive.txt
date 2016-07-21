@@ -1,0 +1,128 @@
+﻿*** Settings ***
+Library           appium
+Library           Selenium2Library
+Library           OperatingSystem
+Library           string
+Library           ../../../../../../../Python27/Lib/site-packages/SendKeys-0.3.dist-info/PressEnterKey.py
+
+*** Variables ***
+${User}           It@0818673336
+${Password}       1234
+${StartDate}      17-07-2016    # pattern dd-mm-yyyy \ (A.D.)
+${EndDate}        20-07-2016    # pattern dd-mm-yyyy \ (A.D.)
+${Sender}         3154925    # หมายเลขผู้ให้บริการ
+${CampaignName}    yyyy
+${Quiz_CampaignName}    test123
+${Quiz_StartDate}    14/07/2016
+${Quiz_EndDate}    15/07/2016
+${Quiz_CampaignID}    123
+
+*** Test Cases ***
+Bizlive_Quiz
+    [Tags]    BizliveDemo
+    Selenium2Library.Open Browser    https://staging-bizlive.ais.co.th:7011/    gc
+    Selenium2Library.Maximize Browser Window
+    Login
+    sleep    3
+    Selenium2Library.Mouse Over    id=products
+    Selenium2Library.Mouse Over    xpath=//*[@id="nav"]/li[2]/ul/li[3]/a
+    Selenium2Library.Wait Until Element Is Visible    xpath=//*[@id="nav"]/li[2]/ul/li[3]/ul/li[4]/a
+    Selenium2Library.Click Element    xpath=//*[@id="nav"]/li[2]/ul/li[3]/ul/li[4]/a
+    Selenium2Library.Wait Until Element Is Visible    xpath=//*[@id="listServiceT"]/tbody/tr[1]/td/strong/a[2]
+    Selenium2Library.Click Element    xpath=//*[@id="listServiceT"]/tbody/tr[1]/td/strong/a[2]
+    Selenium2Library.Select From List    xpath=//*[@id="shortcodeId"]    3154925
+    Selenium2Library.Input Text    xpath=//*[@id="serviceName"]    ${Quiz_CampaignName}
+    Selenium2Library.Input Text    xpath=//*[@id="startDate"]    ${Quiz_StartDate}
+    Selenium2Library.Input Text    xpath=//*[@id="stopDate"]    ${Quiz_EndDate}
+    Selenium2Library.Input Text    xpath=//*[@id="keyName"]    ${Quiz_CampaignID}
+    Selenium2Library.Select Radio Button    nextQuestion    Y
+    Selenium2Library.Input Text    xpath=//*[@id="timeoutDate"]    0
+    Selenium2Library.Input Text    xpath=//*[@id="timeoutHour"]    0
+    Selenium2Library.Input Text    xpath=//*[@id="timeoutMin"]    15
+    Selenium2Library.Select Radio Button    msgReplyType    SMS
+    Selenium2Library.Click Element    ID=submitForm
+    Selenium2Library.Click Element    ID=submitForm    #workaround
+    Sleep    3
+    Send Enter Key
+
+Bizlive_ReportSMS_Campaign
+    [Tags]    BizliveDemo
+    Selenium2Library.Close All Browsers
+    Selenium2Library.Open Browser    http://staging-bizlive.ais.co.th:7010    gc
+    Selenium2Library.Maximize Browser Window
+    Selenium2Library.Input Text    xpath=//*[@id="userName"]    ${User}
+    Selenium2Library.Input Password    xpath=//*[@id="password"]    ${Password}
+    Selenium2Library.Click Button    name=BntLogin    #Click Login Button
+    Selenium2Library.Page Should Contain    ขอต้อนรับเข้าสู่บริการ Smart Messaging
+    Selenium2Library.Mouse Over    xpath=//*[@id="nav"]/li[5]/a/span    #Click Menu Report
+    Selenium2Library.Wait Until Element Is Visible    xpath=//*[@id="nav"]/li[5]/ul/li[3]/a    10
+    Selenium2Library.Click Element    xpath=//*[@id="nav"]/li[5]/ul/li[3]/a    #Click Sub menu SMS Campaign Result
+    Selenium2Library.Select Radio Button    type    interactive
+    Selenium2Library.Input Text    xpath=//*[@id="fromDate"]    ${StartDate}
+    Selenium2Library.Input Text    xpath=//*[@id="toDate"]    ${EndDate}
+    Selenium2Library.Select Checkbox    xpath=//*[@id="formSenderCheck"]
+    Selenium2Library.Select From List    xpath=//*[@id="sender"]    ${Sender}
+    Selenium2Library.Select Checkbox    xpath=//*[@id="formCamCheck"]    #Checkbox Select campaign Name
+    Selenium2Library.Select From List    xpath=//*[@id="campaign"]    ${CampaignName}    # Select campaign Name
+    Selenium2Library.Click Element    //*[@id="submitreport"]    #Click View Report
+    ${ActualStartDate}    Selenium2Library.Get Text    xpath=//div[@class='contentWrap']/table[@class='txt']/tbody/tr/td/strong/span[1]
+    Log    ${ActualStartDate}
+    ${ActualEndDate}    Selenium2Library.Get Text    xpath=//div[@class='contentWrap']/table[@class='txt']/tbody/tr/td/strong/span[2]
+    Log    ${ActualEndDate}
+    ${NewFormatActualStartDate}    string.Replace    ${ActualStartDate}    /    -
+    Log    ${NewFormatActualStartDate}
+    ${NewFormatActuallEndDate}    string.Replace    ${ActualEndDate}    /    -
+    Log    ${NewFormatActuallEndDate}
+    BuiltIn.Should Be Equal    ${NewFormatActualStartDate}    ${StartDate}
+    BuiltIn.Should Be Equal    ${NewFormatActuallEndDate}    ${EndDate}
+
+Bizlive_MMS3
+
+Bizlive_SMS3
+    Selenium2Library.Open Browser    https://staging-bizlive.ais.co.th:7010/    gc
+    Selenium2Library.Maximize Browser Window
+    Selenium2Library.Input Text    xpath=//*[@id="userName"]    mod@0818673336
+    Selenium2Library.Input Password    xpath=//*[@id="password"]    1234
+    Selenium2Library.Click Button    name=BntLogin
+    Selenium2Library.Mouse Over    id=products
+    Selenium2Library.Mouse Over    xpath=//*[@id="nav"]/li[2]/ul/li[3]/a
+    Selenium2Library.Click Element    xpath=//*[@id="nav"]/li[2]/ul/li[3]/ul/li[4]/a
+    Selenium2Library.Click Element    xpath=//*[@id="listServiceT"]/tbody/tr[1]/td/strong/a[2]
+
+Bizlive_ReportSMS_Campaign_Fail
+    Selenium2Library.Close All Browsers
+    Selenium2Library.Open Browser    http://staging-bizlive.ais.co.th:7010    gc
+    Selenium2Library.Maximize Browser Window
+    Selenium2Library.Input Text    xpath=//*[@id="userName"]    ${User}
+    Selenium2Library.Input Password    xpath=//*[@id="password"]    ${Password}
+    Selenium2Library.Click Button    name=BntLogin
+    Selenium2Library.Page Should Contain    ขอต้อนรับเข้าสู่บริการ Smart Messaging
+    Selenium2Library.Mouse Over    xpath=//*[@id="nav"]/li[5]/a/span
+    Selenium2Library.Wait Until Element Is Visible    xpath=//*[@id="nav"]/li[5]/ul/li[3]/a    10
+    Selenium2Library.Click Element    xpath=//*[@id="nav"]/li[5]/ul/li[3]/a
+    Selenium2Library.Click Element    xpath=//*[@id="submitreport"]
+    Select Window
+
+TestSwitchWindow
+    Selenium2Library.Close All Browsers
+    Selenium2Library.Open Browser    http://staging-bizlive.ais.co.th:7010    gc
+    Selenium2Library.Maximize Browser Window
+    Selenium2Library.Input Text    xpath=//*[@id="userName"]    ${User}
+    Selenium2Library.Input Password    xpath=//*[@id="password"]    ${Password}
+    Selenium2Library.Click Button    name=BntLogin
+    Selenium2Library.Page Should Contain    ขอต้อนรับเข้าสู่บริการ Smart Messaging
+    Selenium2Library.Mouse Over    xpath=//*[@id="nav"]/li[5]/a/span
+    Selenium2Library.Wait Until Element Is Visible    xpath=//*[@id="nav"]/li[5]/ul/li[3]/a    10
+    Selenium2Library.Click Element    xpath=//*[@id="nav"]/li[5]/ul/li[3]/a
+    Selenium2Library.Select Radio Button    type    interactive
+    Selenium2Library.Click Element    xpath=//*[@id="fromDate"]
+    Selenium2Library.Close Window
+    @{A}    Selenium2Library.Get Window Identifiers
+    Selenium2Library.Select Window    @{A}[1]
+
+*** Keywords ***
+Login
+    Selenium2Library.Input Text    xpath=//*[@id="userName"]    mod@0818673336
+    Selenium2Library.Input Password    xpath=//*[@id="password"]    1234
+    Selenium2Library.Click Button    name=BntLogin    #Click Login Button
+    sleep    3
