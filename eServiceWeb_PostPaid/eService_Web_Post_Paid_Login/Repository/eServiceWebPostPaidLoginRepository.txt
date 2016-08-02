@@ -1,0 +1,4 @@
+*** Variables ***
+${Language}       xpath=//*[@ng-click="langService.setLang('${LANG}')"]
+${MobileNumber}    id=textfield
+${GetOTP}         id=btnLoginGetOtpMethod
