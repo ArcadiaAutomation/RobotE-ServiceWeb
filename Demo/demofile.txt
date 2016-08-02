@@ -1,4 +1,4 @@
-﻿*** Settings ***
+*** Settings ***
 Library           OperatingSystem
 Library           ../../../../../../../Python27/Lib/site-packages/TestLibrary/GetSMSfromMOOD.py
 Library           string
