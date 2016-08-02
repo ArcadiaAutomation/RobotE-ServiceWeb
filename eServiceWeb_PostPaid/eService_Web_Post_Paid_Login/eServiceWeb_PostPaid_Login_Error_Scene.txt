@@ -1,0 +1,15 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ${LANG}/eServiceWebPostPaidLogMessage.txt
+
+*** Test Cases ***
+F01-eServiceWeb-PO-Login-NumberNotComplete
+    Open Browser    https://aiseservice.ais.co.th/eServiceWeb/    gc
+    Maximize Browser Window
+    Select Frame    id=MainIframe
+    Click Element    xpath=//*[@ng-click="langService.setLang('${LANG}')"]
+    Input Text    id=textfield    061385133
+    Click Element    id=btnLoginGetOtpMethod
+    Element Text Should Be    xpath=//*[@id="popup_detail"]/div[1]    ${ERROR_NumberNotComplete}
+    Click Element    xpath=//*[@ng-bind-html="'COMMON.BTN_CLOSE'|displayText"]
+    Close Browser
