@@ -19,4 +19,8 @@ def getsms(sender,ip,index,udid):
     name.click()
     time.sleep(5)
     sms = driver.find_elements_by_xpath("//*[@resource-id='com.calea.echo:id/imm_text']")
+<<<<<<< HEAD
     return sms[len(sms)-index].get_attribute("text")
+=======
+    return sms[len(sms)-index].get_attribute("text")
+>>>>>>> origin/master
