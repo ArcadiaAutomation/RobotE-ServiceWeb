@@ -5,11 +5,10 @@ Resource          Repository/eServiceWebPostPaidLoginRepository.txt
 Resource          ${LANG}/eServiceWebPostPaidLoginMessage.txt
 Library           ../../Library/GetSMSfromMOOD.py
 Library           ../../Library/getString.py
-<<<<<<< HEAD
 
 *** Variables ***
 ${LANG}           EN
-=======
+
 Library           AppiumLibrary
 >>>>>>> origin/master
 
@@ -23,6 +22,7 @@ F01-eServiceWeb-PO-Login-NumberNotComplete
     Click Element    ${GetOTP}
     Element Text Should Be    ${DialogMessage}    ${ERROR_NumberNotComplete}
     Click Element    ${DialogClose}
+
 <<<<<<< HEAD
 
 Login
@@ -136,7 +136,28 @@ Login
     sleep    2
     Click Element    ${btnOKSMSMMS}
     sleep    2
-    Element Text Should Be    ${ERROR_MessageSMSMMS_Destination}
+    Element Text Should Be    ${DialogMessage}    ${ERROR_MessageSMSMMS_Destination}
+
+[F07-210]eServiceWeb_PO_Service_SendSMS_NotCompletNumber_Immediate
+    Login
+    Click Element    ${btnService}
+    sleep    2
+    Click Element    ${btnServiceSendSMSMMS}
+    sleep    2
+    Input Text    ${ServiceSMSMMS_InsertNumber1}    098111
+    sleep    2
+    Click Element    ${btnOKSMSMMS}
+    sleep    2
+    Element Text Should Be    ${DialogMessage}    ${ERROR_MessageSMSMMS_10digit}
+
+[F07-211]eServiceWeb_PO_Service_SendSMS_FillCharacterInPhoneNumber_Immediate
+    Login
+    Click Element    ${btnService}
+    sleep    2
+    Click Element    ${btnServiceSendSMSMMS}
+    sleep    2
+    Input Text    ${ServiceSMSMMS_InsertNumber1}    ส
+    Element Text Should Be    ${DialogMessage}    ${ERROR_MessageVoiceAdd_NumberOnly}
 
 *** Keywords ***
 Login
@@ -151,6 +172,7 @@ Login
     Input Text    ${InputOTP}    ${OTP}
     Click Element    ${OKOTP}
     sleep    4
+
 =======
     Close Browser
 
@@ -164,4 +186,5 @@ F03-eServiceWeb-PO-Login-FillOTPNotComplete
     ${OTPMessage}    Getsms    AIS    127.0.0.1    1    2a82ee4d
     ${OTP}    getOTPinSMS    ${OTPMessage}
     Log To Console    ${OTP}
+
 >>>>>>> origin/master

@@ -19,3 +19,4 @@ ${SMSOTP}         ${EMPTY}
 ${OKOTP}          //*[@id="lnkLoginLoginWithOtp"]
 ${btnServiceSendSMSMMS}    //*[@id="menu-20"]
 ${btnOKSMSMMS}    //*[@id="btnServiceSendSMSMMSSubmit"]
+${ServiceSMSMMS_InsertNumber1}    //*[@id="txtServiceSendSMSMMSReceivedNumber0"]
