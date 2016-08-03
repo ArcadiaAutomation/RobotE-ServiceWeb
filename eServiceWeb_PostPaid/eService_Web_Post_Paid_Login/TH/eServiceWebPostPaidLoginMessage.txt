@@ -1,2 +1,5 @@
 *** Variables ***
 ${ERROR_NumberNotComplete}    กรุณาระบุหมายเลขโทรศัพท์เป็นตัวเลข 10 หลัก
+${ERRROR_NumberDtac}    บริการนี้สำหรับลูกค้าเอไอเอสเท่านั้น กรุณาระบุหมายเลขเอไอเอสใหม่อีกครั้ง
+${ERROR_InputOtpWithCharacter}    กรุณาระบุเป็นตัวเลขเท่านั้น
+${ERROR_NotSelectMySuperPlanPacKage}    กรุณาเลือก my Super Plan ที่คุณต้องการ

@@ -1,2 +1,5 @@
 *** Variables ***
 ${ERROR_NumberNotComplete}    Please specify a 10-digit mobile number.
+${ERRROR_NumberDtac}    The number must be an AIS mobile number only. Please enter a new number.
+${ERROR_InputOtpWithCharacter}    Please enter numerical data only.
+${ERROR_NotSelectMySuperPlanPacKage}    Please select my Super Plan that you want.
