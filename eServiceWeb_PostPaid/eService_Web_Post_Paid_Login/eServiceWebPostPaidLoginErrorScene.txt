@@ -4,21 +4,12 @@ Library           AppiumLibrary
 Resource          ../Repository/eServiceWebPostPaidRepository.txt
 Resource          Repository/eServiceWebPostPaidLoginRepository.txt
 Resource          ${LANG}/eServiceWebPostPaidLoginMessage.txt
-<<<<<<< HEAD
-Library           ../../../../../Mood_OTP/GetSMSfromMOOD.py
-Library           ../../../../../Mood_OTP/getString.py
-
-*** Test Cases ***
-[F01-001]eServiceWeb-PO-Login-NumberNotComplete
-    Open Browser    ${eServiceURL}    gc
-=======
 Library           ../../Library/GetSMSfromMOOD.py
-Library           ../../Library/getString.py
+Library           ../../Library/GetSMSfromMOOD.py
 
 *** Test Cases ***
 [F01-001]eServiceWeb-PO-Login-NumberNotComplete
     Open Browser    ${eServiceURL}    ${BROWSER}
->>>>>>> origin/master
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Element    ${Language}
@@ -28,9 +19,8 @@ Library           ../../Library/getString.py
     Click Element    ${DialogClose}
     Close Browser
 
-<<<<<<< HEAD
 [F01-002]eServiceWeb-PO-Login-NumberDtac
-    Open Browser    ${eServiceURL}    gc
+    Open Browser    ${eServiceURL}    ${BROWSER}
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Element    ${Language}
@@ -39,6 +29,18 @@ Library           ../../Library/getString.py
     Wait Until Page Contains Element    ${ToolTipMessage}
     Element Text Should Be    ${ToolTipMessage}    ${ERRROR_NumberDtac}
     Close Browser
+
+[F01-003]eServiceWeb-PO-Login-FillOTPNotComplete
+    Selenium2Library.Open Browser    ${eServiceURL}    ${BROWSER}
+    Selenium2Library.Maximize Browser Window
+    Selenium2Library.Select Frame    ${MainIframe}
+    Selenium2Library. Click Element    ${Language}
+    Selenium2Library.Input Text    ${MobileNumber}    0613851339
+    Selenium2Library.Click Element    ${GetOTP}
+    ${OTPMessage}    Getsms    AIS    127.0.0.1    1    2a82ee4d
+    ${OTP}    getOTPinSMS    ${OTPMessage}
+    Log To Console    ${OTP}
+    Selenium2Library.Input Text    ${InputOTP}    ${OTP}
 
 [F01-003]eServiceWeb-PO-Login-OtpNotcomplete
     Open Browser    ${eServiceURL}    gc
@@ -65,33 +67,17 @@ Library           ../../Library/getString.py
     Click Element    ${DialogClose}
     Close Browser
 
-[S01-001]eServiceWeb-PO-LoginSuccess
-    Open Browser    ${eServiceURL}    gc
-    Maximize Browser Window
-    Select Frame    ${MainIframe}
-    Click Element    ${Language}
-    Input Text    ${MobileNumber}    0613851273
-    Click Element    ${GetOTP}
-    ${SMSOTP}    Getsms    AIS    10.239.223.119    1    4d00643b4828a0df
-    ${OtpNumber}    Get OT Pin SMS    ${SMSOTP}
-    Input Text    ${Otp}    ${OtpNumber}
-    Click Element    ${LoginOtp}
-    Sleep    2
-    Element Should Be Visible    ${MainPageCustomerNumber}
-
 [F03-008]eServiceWeb-PO-MysuperPlan
-=======
-[F01-003]eServiceWeb-PO-Login-FillOTPNotComplete
-    Selenium2Library.Open Browser    ${eServiceURL}    ${BROWSER}
-    Selenium2Library.Maximize Browser Window
-    Selenium2Library.Select Frame    ${MainIframe}
-    Selenium2Library. Click Element    ${Language}
-    Selenium2Library.Input Text    ${MobileNumber}    0613851339
-    Selenium2Library.Click Element    ${GetOTP}
-    ${OTPMessage}    Getsms    AIS    127.0.0.1    1    2a82ee4d
-    ${OTP}    getOTPinSMS    ${OTPMessage}
-    Log To Console    ${OTP}
-    Selenium2Library.Input Text    ${InputOTP}    ${OTP}
+    Element Should Be Visible    ${MainPageCustomerNumber}
+    Sleep    3
+    Click Element    ${MenuPackage}
+    Sleep    3
+    Click Element    ${SubMenuMySuperPlan}
+    Sleep    3
+    Click Image    ${MySuperPlanImage}
+    Sleep    3
+    Click Element    ${ConfirmMySuperPlan}
+    Element Text Should Be    ${DialogMessage}    ${ERROR_NotSelectMySuperPlanPacKage}
 
 [F07-199]eServiceWeb-PO-Service-VoiceCalling-EditOnNonRegisteredNumber
     Login
@@ -202,38 +188,3 @@ Library           ../../Library/getString.py
     Click Element    ${btnOKSMSMMS}
     sleep    2
     Element Text Should Be    ${ERROR_MessageSMSMMS_Destination}
-
-*** Keywords ***
-Login
->>>>>>> origin/master
-    Open Browser    ${eServiceURL}    gc
-    Maximize Browser Window
-    Select Frame    ${MainIframe}
-    Click Element    ${Language}
-<<<<<<< HEAD
-    Input Text    ${MobileNumber}    0613851273
-    Click Element    ${GetOTP}
-    ${SMSOTP}    Getsms    AIS    10.239.223.119    1    4d00643b4828a0df
-    ${OtpNumber}    Get OT Pin SMS    ${SMSOTP}
-    Input Text    ${Otp}    ${OtpNumber}
-    Click Element    ${LoginOtp}
-    Sleep    3
-    Element Should Be Visible    ${MainPageCustomerNumber}
-    Sleep    3
-    Click Element    ${MenuPackage}
-    Sleep    3
-    Click Element    ${SubMenuMySuperPlan}
-    Sleep    3
-    Click Image    ${MySuperPlanImage}
-    Sleep    3
-    Click Element    ${ConfirmMySuperPlan}
-    Element Text Should Be    ${DialogMessage}    ${ERROR_NotSelectMySuperPlanPacKage}
-=======
-    Input Text    ${MobileNumber}    0923026951
-    Click Element    ${GetOTP}
-    ${SMSOTP}    Getsms    AIS    10.239.223.71    1    8f65cc76
-    ${OTP}    getOTPinSMS    ${SMSOTP}
-    Input Text    ${InputOTP}    ${OTP}
-    Click Element    ${OKOTP}
-    sleep    4
->>>>>>> origin/master
