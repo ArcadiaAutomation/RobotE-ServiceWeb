@@ -2,4 +2,5 @@
 ${Language}       xpath=//*[@ng-click="langService.setLang('${LANG}')"]
 ${MobileNumber}    id=textfield
 ${GetOTP}         id=btnLoginGetOtpMethod
-${OTPNumber}      id=inputOtpNumber
+${InputOTP}       id=inputOtpNumber
+${OKOTP}          xpath=//*[@id="lnkLoginLoginWithOtp"]/span
