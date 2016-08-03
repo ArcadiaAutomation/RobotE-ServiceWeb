@@ -1,14 +1,24 @@
 *** Settings ***
 Library           Selenium2Library
+Library           AppiumLibrary
 Resource          ../Repository/eServiceWebPostPaidRepository.txt
 Resource          Repository/eServiceWebPostPaidLoginRepository.txt
 Resource          ${LANG}/eServiceWebPostPaidLoginMessage.txt
+<<<<<<< HEAD
 Library           ../../../../../Mood_OTP/GetSMSfromMOOD.py
 Library           ../../../../../Mood_OTP/getString.py
 
 *** Test Cases ***
 [F01-001]eServiceWeb-PO-Login-NumberNotComplete
     Open Browser    ${eServiceURL}    gc
+=======
+Library           ../../Library/GetSMSfromMOOD.py
+Library           ../../Library/getString.py
+
+*** Test Cases ***
+[F01-001]eServiceWeb-PO-Login-NumberNotComplete
+    Open Browser    ${eServiceURL}    ${BROWSER}
+>>>>>>> origin/master
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Element    ${Language}
@@ -18,6 +28,7 @@ Library           ../../../../../Mood_OTP/getString.py
     Click Element    ${DialogClose}
     Close Browser
 
+<<<<<<< HEAD
 [F01-002]eServiceWeb-PO-Login-NumberDtac
     Open Browser    ${eServiceURL}    gc
     Maximize Browser Window
@@ -69,10 +80,137 @@ Library           ../../../../../Mood_OTP/getString.py
     Element Should Be Visible    ${MainPageCustomerNumber}
 
 [F03-008]eServiceWeb-PO-MysuperPlan
+=======
+[F01-003]eServiceWeb-PO-Login-FillOTPNotComplete
+    Selenium2Library.Open Browser    ${eServiceURL}    ${BROWSER}
+    Selenium2Library.Maximize Browser Window
+    Selenium2Library.Select Frame    ${MainIframe}
+    Selenium2Library. Click Element    ${Language}
+    Selenium2Library.Input Text    ${MobileNumber}    0613851339
+    Selenium2Library.Click Element    ${GetOTP}
+    ${OTPMessage}    Getsms    AIS    127.0.0.1    1    2a82ee4d
+    ${OTP}    getOTPinSMS    ${OTPMessage}
+    Log To Console    ${OTP}
+    Selenium2Library.Input Text    ${InputOTP}    ${OTP}
+
+[F07-199]eServiceWeb-PO-Service-VoiceCalling-EditOnNonRegisteredNumber
+    Login
+    Click Element    ${btnService}
+    sleep    2
+    Click Element    ${btnServiceVoiceRegister}
+    sleep    2
+    Element Text Should Be    ${SummaryMessage}    ${ERROR_MessageVoiceRegister}
+
+[F07-200]eServiceWeb-PO-Service-VoiceCalling-RegisterOnRegisteredNumber
+    Login
+    Click Element    ${btnService}
+    sleep    2
+    Click Element    ${btnServiceVoiceAdd/Edit}
+    sleep    2
+    Element Text Should Be    ${SummaryMessage}    ${ERROR_MessageVoiceAdd/Edit}
+
+[F07-201]eServiceWeb-PO-Service-VoiceCalling-CancelOnNonRegisteredNumber
+    Login
+    Click Element    ${btnService}
+    sleep    2
+    Click Element    ${btnServiceVoiceCancel}
+    sleep    2
+    Element Text Should Be    ${SummaryMessage}    ${ERROR_MessageVoiceAdd/Edit}
+
+[F07-202]eServiceWeb-PO-Service-VoiceCalling-EditWithoutChangeData
+    Login
+    Click Element    ${btnService}
+    sleep    2
+    Click Element    ${btnServiceVoiceAdd/Edit}
+    sleep    2
+    Click Element    ${btnServiceVoiceAdd/Edit(Save)}
+    sleep    2
+    Element Text Should Be    ${DialogMessage}    ${ERROR_MessageVoiceAdd_NoDataUpdate}
+
+[F07-203]eServiceWeb-PO-Service-VoiceCalling-AddWithOnlyInputName
+    Login
+    Click Element    ${btnService}
+    sleep    2
+    Click Element    ${btnServiceVoiceAdd/Edit}
+    sleep    2
+    Input Text    ${ServiceVoiceAddInputName}    สมชาย
+    Click Element    ${btnServiceVoiceAdd/Edit(Save)}
+    sleep    2
+    Element Text Should Be    ${DialogMessage}    ${ERROR_MessageVoiceAdd_InsertMobile}
+
+[F07-204]eServiceWeb-PO-Service-VoiceCalling-AddWithOnlyInputSpell
+    Login
+    Click Element    ${btnService}
+    sleep    2
+    Click Element    ${btnServiceVoiceAdd/Edit}
+    sleep    2
+    Input Text    ${ServiceVoice_Spell1}    สม
+    Input Text    ${ServiceVoice_Spell2}    ชาย
+    Click Element    ${btnServiceVoiceAdd/Edit(Save)}
+    sleep    2
+    Element Text Should Be    ${DialogMessage}    ${ERROR_MessageVoiceAdd_InsertName}
+
+[F07-205]eServiceWeb-PO-Service-VoiceCalling-AddWithOnlyInputNumber
+    Login
+    Click Element    ${btnService}
+    sleep    2
+    Click Element    ${btnServiceVoiceAdd/Edit}
+    sleep    2
+    Input Text    ${ServiceVoice_InsertMobile}    0930208945
+    Click Element    ${btnServiceVoiceAdd/Edit(Save)}
+    sleep    2
+    Element Text Should Be    ${DialogMessage}    ${ERROR_MessageVoiceAdd_InsertName}
+
+[F07-206]eServiceWeb-PO-Service-VoiceCalling-AddWithEngSpell
+    Login
+    Click Element    ${btnService}
+    sleep    2
+    Click Element    ${btnServiceVoiceAdd/Edit}
+    sleep    2
+    Input Text    ${ServiceVoice_Spell1}    s
+    Element Text Should Be    ${DialogMessage}    ${ERROR_MessageVoiceAdd_ThaiOnly}
+
+[F07-207]eServiceWeb-PO-Service-VoiceCalling-AddWithIncorrectSpell
+    Login
+    Click Element    ${btnService}
+    sleep    2
+    Click Element    ${btnServiceVoiceAdd/Edit}
+    sleep    2
+    Input Text    ${ServiceVoiceAddInputName}    สมชาย
+    Input Text    ${ServiceVoice_InsertMobile}    0930208945
+    Input Text    ${ServiceVoice_Spell1}    อา
+    Input Text    ${ServiceVoice_Spell2}    ป้
+    Click Element    ${btnServiceVoiceAdd/Edit(Save)}
+    sleep    2
+    Element Text Should Be    ${SummaryMessage}    ${ERROR_MessageVoiceAdd_IncorrectSpell}
+
+[F07-208]eServiceWeb-PO-Service-VoiceCalling-AddWithNonNumericalNumber
+    Login
+    Click Element    ${btnService}
+    sleep    2
+    Click Element    ${btnServiceVoiceAdd/Edit}
+    sleep    2
+    Input Text    ${ServiceVoice_InsertMobile}    ส
+    Element Text Should Be    ${DialogMessage}    ${ERROR_MessageVoiceAdd_NumberOnly}
+
+[F07-209]eServiceWeb-PO-Service-SendSMS-NoFillAny-Immediate
+    Login
+    Click Element    ${btnService}
+    sleep    2
+    Click Element    ${btnServiceSendSMSMMS}
+    sleep    2
+    Click Element    ${btnOKSMSMMS}
+    sleep    2
+    Element Text Should Be    ${ERROR_MessageSMSMMS_Destination}
+
+*** Keywords ***
+Login
+>>>>>>> origin/master
     Open Browser    ${eServiceURL}    gc
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Element    ${Language}
+<<<<<<< HEAD
     Input Text    ${MobileNumber}    0613851273
     Click Element    ${GetOTP}
     ${SMSOTP}    Getsms    AIS    10.239.223.119    1    4d00643b4828a0df
@@ -90,3 +228,12 @@ Library           ../../../../../Mood_OTP/getString.py
     Sleep    3
     Click Element    ${ConfirmMySuperPlan}
     Element Text Should Be    ${DialogMessage}    ${ERROR_NotSelectMySuperPlanPacKage}
+=======
+    Input Text    ${MobileNumber}    0923026951
+    Click Element    ${GetOTP}
+    ${SMSOTP}    Getsms    AIS    10.239.223.71    1    8f65cc76
+    ${OTP}    getOTPinSMS    ${SMSOTP}
+    Input Text    ${InputOTP}    ${OTP}
+    Click Element    ${OKOTP}
+    sleep    4
+>>>>>>> origin/master

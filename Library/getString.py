@@ -1,4 +1,5 @@
-def getOTPinSMS(FullString):
-    Index = FullString.find("OTP")
-    OTP = FullString[Index+6:Index+10]
-    return OTP
+import re
+def getOTPinSMS(FullString):    
+    OTP = re.search( r"\d\d\d\d", FullString)
+    return OTP.group()
+
