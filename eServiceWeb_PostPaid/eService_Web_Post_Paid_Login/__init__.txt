@@ -1,15 +1,1 @@
 *** Settings ***
-
-*** Keywords ***
-Login
-    Open Browser    ${eServiceURL}    gc
-    Maximize Browser Window
-    Select Frame    ${MainIframe}
-    Click Element    ${Language}
-    Input Text    ${MobileNumber}    0923026951
-    Click Element    ${GetOTP}
-    ${SMSOTP}    Getsms    AIS    10.239.223.71    1    8f65cc76
-    ${OTP}    getOTPinSMS    ${SMSOTP}
-    Input Text    ${InputOTP}    ${OTP}
-    Click Element    ${OKOTP}
-    sleep    4

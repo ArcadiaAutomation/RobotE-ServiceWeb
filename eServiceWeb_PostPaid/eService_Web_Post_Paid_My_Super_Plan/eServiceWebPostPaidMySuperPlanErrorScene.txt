@@ -1,0 +1,19 @@
+*** Settings ***
+Library           Selenium2Library
+Library           AppiumLibrary
+Resource          ../Repository/eServiceWebPostPaidRepository.txt
+Library           ../../Library/GetSMSfromMOOD.py
+Library           ../../Library/getString.py
+
+*** Test Cases ***
+[F03-008]eServiceWeb-PO-MysuperPlan
+    Element Should Be Visible    ${MainPageCustomerNumber}
+    Sleep    3
+    Click Element    ${MenuPackage}
+    Sleep    3
+    Click Element    ${SubMenuMySuperPlan}
+    Sleep    3
+    Click Image    ${MySuperPlanImage}
+    Sleep    3
+    Click Element    ${ConfirmMySuperPlan}
+    Element Text Should Be    ${DialogMessage}    ${ERROR_NotSelectMySuperPlanPacKage}
