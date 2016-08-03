@@ -1,12 +1,12 @@
 *** Settings ***
 Library           OperatingSystem
-Library           ../../../../../../../Python27/Lib/site-packages/TestLibrary/GetSMSfromMOOD.py
+Library           C:/Python27/Lib/site-packages/TestLibraty/GetSMSfromMOOD.py
 Library           string
 Library           BuiltIn
 Library           AppiumLibrary
 Library           Selenium2Library
 Library           Collections
-Library           ../../../../../../../Python27/Lib/site-packages/TestLibrary/getString.py
+Library           C:/Python27/Lib/site-packages/TestLibraty/getString.py
 
 *** Variables ***
 ${Expect}         Test    # Expect for TestCase"DemoLV.2"
