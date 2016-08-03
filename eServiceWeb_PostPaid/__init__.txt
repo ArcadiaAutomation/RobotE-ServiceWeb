@@ -1,3 +1,10 @@
+*** Settings ***
+Library           AppiumLibrary
+Library           Selenium2Library
+Library           ../Library/GetSMSfromMOOD.py
+Library           ../Library/getString.py
+Resource          Repository/eServiceWebPostPaidRepository.txt
+
 *** Keywords ***
 Login
     Open Browser    ${eServiceURL}    gc

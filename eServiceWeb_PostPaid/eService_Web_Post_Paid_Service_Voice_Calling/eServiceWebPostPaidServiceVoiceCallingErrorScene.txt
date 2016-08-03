@@ -1,16 +1,14 @@
 *** Settings ***
-Library           Selenium2Library
-Library           AppiumLibrary
+Resource          Repositiry/eServiceWebPostPaidVoiceCallingRepository.txt
+Resource          ${LANG}/eServiceWebPostPaidVoiceCallingMessage.txt
 Resource          ../Repository/eServiceWebPostPaidRepository.txt
-Library           ../../Library/GetSMSfromMOOD.py
-Library           ../../Library/getString.py
 
 *** Test Cases ***
 [F07-199]eServiceWeb-PO-Service-VoiceCalling-EditOnNonRegisteredNumber
     Login
     Click Element    ${btnService}
     sleep    2
-    Click Element    ${btnServiceVoiceRegister}
+    Click Element    ${btnVoice_Register}
     sleep    2
     Element Text Should Be    ${SummaryMessage}    ${ERROR_MessageVoiceRegister}
 
@@ -18,7 +16,7 @@ Library           ../../Library/getString.py
     Login
     Click Element    ${btnService}
     sleep    2
-    Click Element    ${btnServiceVoiceAdd/Edit}
+    Click Element    ${btnVoice_Add/Edit}
     sleep    2
     Element Text Should Be    ${SummaryMessage}    ${ERROR_MessageVoiceAdd/Edit}
 
@@ -26,7 +24,7 @@ Library           ../../Library/getString.py
     Login
     Click Element    ${btnService}
     sleep    2
-    Click Element    ${btnServiceVoiceCancel}
+    Click Element    ${btnVoice_Cancel}
     sleep    2
     Element Text Should Be    ${SummaryMessage}    ${ERROR_MessageVoiceAdd/Edit}
 
@@ -34,7 +32,7 @@ Library           ../../Library/getString.py
     Login
     Click Element    ${btnService}
     sleep    2
-    Click Element    ${btnServiceVoiceAdd/Edit}
+    Click Element    ${btnVoice_Add/Edit}
     sleep    2
     Click Element    ${btnServiceVoiceAdd/Edit(Save)}
     sleep    2
@@ -44,7 +42,7 @@ Library           ../../Library/getString.py
     Login
     Click Element    ${btnService}
     sleep    2
-    Click Element    ${btnServiceVoiceAdd/Edit}
+    Click Element    ${btnVoice_Add/Edit}
     sleep    2
     Input Text    ${ServiceVoiceAddInputName}    สมชาย
     Click Element    ${btnServiceVoiceAdd/Edit(Save)}
@@ -55,7 +53,7 @@ Library           ../../Library/getString.py
     Login
     Click Element    ${btnService}
     sleep    2
-    Click Element    ${btnServiceVoiceAdd/Edit}
+    Click Element    ${btnVoice_Add/Edit}
     sleep    2
     Input Text    ${ServiceVoice_Spell1}    สม
     Input Text    ${ServiceVoice_Spell2}    ชาย
@@ -67,7 +65,7 @@ Library           ../../Library/getString.py
     Login
     Click Element    ${btnService}
     sleep    2
-    Click Element    ${btnServiceVoiceAdd/Edit}
+    Click Element    ${btnVoice_Add/Edit}
     sleep    2
     Input Text    ${ServiceVoice_InsertMobile}    0930208945
     Click Element    ${btnServiceVoiceAdd/Edit(Save)}
@@ -78,7 +76,7 @@ Library           ../../Library/getString.py
     Login
     Click Element    ${btnService}
     sleep    2
-    Click Element    ${btnServiceVoiceAdd/Edit}
+    Click Element    ${btnVoice_Add/Edit}
     sleep    2
     Input Text    ${ServiceVoice_Spell1}    s
     Element Text Should Be    ${DialogMessage}    ${ERROR_MessageVoiceAdd_ThaiOnly}
@@ -87,7 +85,7 @@ Library           ../../Library/getString.py
     Login
     Click Element    ${btnService}
     sleep    2
-    Click Element    ${btnServiceVoiceAdd/Edit}
+    Click Element    ${btnVoice_Add/Edit}
     sleep    2
     Input Text    ${ServiceVoiceAddInputName}    สมชาย
     Input Text    ${ServiceVoice_InsertMobile}    0930208945
@@ -101,7 +99,7 @@ Library           ../../Library/getString.py
     Login
     Click Element    ${btnService}
     sleep    2
-    Click Element    ${btnServiceVoiceAdd/Edit}
+    Click Element    ${btnVoice_Add/Edit}
     sleep    2
     Input Text    ${ServiceVoice_InsertMobile}    ส
     Element Text Should Be    ${DialogMessage}    ${ERROR_MessageVoiceAdd_NumberOnly}

@@ -3,4 +3,4 @@ ${MainIframe}     id=MainIframe
 ${DialogMessage}    xpath=//*[@id="popup_detail"]/div[1]
 ${DialogClose}    xpath=//*[@ng-bind-html="'COMMON.BTN_CLOSE'|displayText"]
 ${eServiceURL}    https://aiseservice.ais.co.th/eServiceWeb/
-${ToolTipMessage}    xpath=//*[@id="login_fill"]/div/div[3]/div[2]/div/div[2]
+${btnService}     xpath=//*[@id="menu-17"]/span
