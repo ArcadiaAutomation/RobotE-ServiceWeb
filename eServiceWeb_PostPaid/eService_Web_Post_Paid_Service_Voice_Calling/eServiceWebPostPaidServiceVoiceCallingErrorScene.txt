@@ -2,6 +2,7 @@
 Resource          Repositiry/eServiceWebPostPaidVoiceCallingRepository.txt
 Resource          ${LANG}/eServiceWebPostPaidVoiceCallingMessage.txt
 Resource          ../Repository/eServiceWebPostPaidRepository.txt
+Library           ../ResourceKeywords.txt
 
 *** Test Cases ***
 [F07-199]eServiceWeb-PO-Service-VoiceCalling-EditOnNonRegisteredNumber
