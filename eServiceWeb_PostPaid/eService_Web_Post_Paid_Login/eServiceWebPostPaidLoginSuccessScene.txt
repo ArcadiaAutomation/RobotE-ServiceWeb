@@ -1,0 +1,23 @@
+*** Settings ***
+Library           Selenium2Library
+Library           AppiumLibrary
+Resource          ../Repository/eServiceWebPostPaidRepository.txt
+Resource          Repository/eServiceWebPostPaidLoginRepository.txt
+Resource          ${LANG}/eServiceWebPostPaidLoginMessage.txt
+Library           ../../Library/GetSMSfromMOOD.py
+Library           ../../Library/GetSMSfromMOOD.py
+
+*** Test Cases ***
+[S01-001]eServiceWeb-PO-LoginSuccess
+    Open Browser    ${eServiceURL}    gc
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Element    ${Language}
+    Input Text    ${MobileNumber}    0613851273
+    Click Element    ${GetOTP}
+    ${SMSOTP}    Getsms    AIS    10.239.223.119    1    4d00643b4828a0df
+    ${OtpNumber}    Get OT Pin SMS    ${SMSOTP}
+    Input Text    ${Otp}    ${OtpNumber}
+    Click Element    ${LoginOtp}
+    Sleep    2
+    Element Should Be Visible    ${MainPageCustomerNumber}
