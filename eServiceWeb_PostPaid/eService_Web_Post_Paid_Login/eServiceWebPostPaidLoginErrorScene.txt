@@ -4,8 +4,9 @@ Library           AppiumLibrary
 Resource          ../Repository/eServiceWebPostPaidRepository.txt
 Resource          Repository/eServiceWebPostPaidLoginRepository.txt
 Resource          ${LANG}/eServiceWebPostPaidLoginMessage.txt
-Library           ../../Library/GetSMSfromMOOD.py
 Library           ../../Library/getString.py
+Library           ../../Library/GetSMSfromMOOD.py
+Resource          ../ResourceKeywords.txt
 
 *** Test Cases ***
 [F01-001]eServiceWeb-PO-Login-NumberNotComplete
@@ -66,3 +67,7 @@ Library           ../../Library/getString.py
     Element Text Should Be    ${DialogMessage}    ${ERROR_InputOtpWithCharacter}
     Click Element    ${DialogClose}
     Close Browser
+
+test
+    [Tags]    test
+    Login
