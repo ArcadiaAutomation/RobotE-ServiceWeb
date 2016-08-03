@@ -1,4 +1,4 @@
-﻿*** Settings ***
+*** Settings ***
 Library           appium
 Library           Selenium2Library
 Library           OperatingSystem
