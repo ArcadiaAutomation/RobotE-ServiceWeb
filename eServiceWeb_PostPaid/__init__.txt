@@ -1,8 +1,5 @@
 *** Settings ***
-Library           AppiumLibrary
 Library           Selenium2Library
-Library           ../Library/GetSMSfromMOOD.py
-Library           ../Library/getString.py
-Resource          Repository/eServiceWebPostPaidRepository.txt
+Library           AppiumLibrary
 
 *** Keywords ***

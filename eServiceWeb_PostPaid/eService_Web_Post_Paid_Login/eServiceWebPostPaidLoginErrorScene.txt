@@ -71,3 +71,5 @@ Resource          ../ResourceKeywords.txt
 test
     [Tags]    test
     Login
+
+[F01-004]eServiceWeb-PO-Login-InputWrongOtp
