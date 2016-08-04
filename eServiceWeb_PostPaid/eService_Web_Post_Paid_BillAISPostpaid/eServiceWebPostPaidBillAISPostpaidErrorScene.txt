@@ -1,6 +1,6 @@
 *** Settings ***
-Resource          Resource/eServiceWebPostPaidLoginResource.txt
-Resource          ${LANG}/eServiceWebPostPaidLoginMessage.txt
+Resource          Resource/eServiceWebPostPaidBillAISPostpaidResource.txt
+Resource          ${LANG}/eServiceWebPostPaidBillAISPostpaidMessage.txt
 Resource          ../Resource/ResourceKeywords.txt
 
 *** TestCase ***
@@ -9,7 +9,7 @@ Resource          ../Resource/ResourceKeywords.txt
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Element    ${Language}
-    Input Text    ${MobileNumber}    061385133
+    Input Text    ${MobileNumber}    0612345
     Click Element    ${GetOTP}
     Element Text Should Be    ${DialogMessage}    ${ERROR_NumberNotComplete}
     Click Element    ${DialogClose}

@@ -6,7 +6,7 @@ Resource          ../../KeywordsDuplicate/KeywordsDuplicate.txt
 Login
     Input Web Text    ${MobileNumber}    ${adb:RUN_3PO_1_Number}
     Click Web Element    ${GetOTP}
-    ${SMSOTP}    Getsms    AIS    10.239.223.71    1    ${adb:RUN_3PO_1}
+    ${SMSOTP}    Getsms    AIS    ${IPLocalHost}    1    ${adb:RUN_3PO_1}
     ${OTP}    getOTPinSMS    ${SMSOTP}
     Input Web Text    ${InputOTP}    ${OTP}
     Click Web Element    ${OKOTP}
