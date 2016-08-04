@@ -31,11 +31,11 @@ Resource          ../Resource/ResourceKeywords.txt
     Open Browser    ${eServiceURL}    gc
     Maximize Browser Window
     Select Frame    ${MainIframe}
-    Click Element    ${Language}
-    Input Text    ${MobileNumber}    0613851273
-    Click Element    ${GetOTP}
+    Click Web Element    ${Language}
+    Input Web Text    ${MobileNumber}    0613851273
+    Click Web Element    ${GetOTP}
     Sleep    2
-    Input Text    ${InputOTP}    123
+    Input Web Text    ${InputOTP}    123
     Element Should Not Be Visible    ${OKOTP}
     Close Browser
 
