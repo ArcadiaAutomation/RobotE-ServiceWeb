@@ -59,9 +59,9 @@ test
     Selenium2Library.Maximize Browser Window
     Selenium2Library.Select Frame    ${MainIframe}
     Selenium2Library.Click Element    ${Language}
-    Selenium2Library.Input Text    ${MobileNumber}    0613851339
+    Selenium2Library.Input Text    ${MobileNumber}    ${adb:RUN_3PO_1_Number}
     Selenium2Library.Click Element    ${GetOTP}
-    ${OTPMessage}    Getsms    AIS    127.0.0.1    1    2a82ee4d
+    ${OTPMessage}    Getsms    AIS    127.0.0.1    1    ${adb:RUN_3PO_1}
     ${OTP}    getOTPinSMS    ${OTPMessage}
     Log To Console    ${OTP}
     Selenium2Library.Input Text    ${InputOTP}    ${OTP}
