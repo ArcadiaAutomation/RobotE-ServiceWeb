@@ -1,3 +1,0 @@
-*** Settings ***
-Resource          ../../Resource/eServiceWebPostPaidResource.txt
-Resource          ../Repository/eServiceWebPostPaidBillAISPostpaidRepository.txt

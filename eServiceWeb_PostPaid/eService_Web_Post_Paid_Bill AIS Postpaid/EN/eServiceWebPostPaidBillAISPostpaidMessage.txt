@@ -1,2 +1,0 @@
-*** Variables ***
-${ERROR_NumberNotComplete}    Please specify a 10-digit mobile number.

@@ -1,2 +1,0 @@
-*** Variables ***
-${MobileNumber}    id=textfield
