@@ -5,101 +5,141 @@ Resource          Resource/eServiceWebPostPaidServiceVoiceCallingResource.txt
 
 *** Test Cases ***
 [F07-199]eServiceWeb-PO-Service-VoiceCalling-EditOnNonRegisteredNumber
+    Open Browser    ${eServiceURL}    ${BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
     Login
     Click Web Element    ${btnService}
     sleep    2
-    Selenium2Library.Click Element    ${btnVoice_Register}
+    Click Web Element    ${btnVoice_Register}
     sleep    2
     Element Text Should Be    ${SummaryMessage}    ${ERROR_MessageVoiceRegister}
 
 [F07-200]eServiceWeb-PO-Service-VoiceCalling-RegisterOnRegisteredNumber
+    Open Browser    ${eServiceURL}    ${BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
     Login
-    Selenium2Library.Click Element    ${btnService}
+    Click Web Element    ${btnService}
     sleep    2
-    Selenium2Library.Click Element    ${btnVoice_Add/Edit}
+    Click Web Element    ${btnVoice_Add/Edit}
     sleep    2
     Element Text Should Be    ${SummaryMessage}    ${ERROR_MessageVoiceAdd/Edit}
 
 [F07-201]eServiceWeb-PO-Service-VoiceCalling-CancelOnNonRegisteredNumber
+    Open Browser    ${eServiceURL}    ${BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
     Login
-    Click Element    ${btnService}
+    Click Web Element    ${btnService}
     sleep    2
-    Click Element    ${btnVoice_Cancel}
+    Click Web Element    ${btnVoice_Cancel}
     sleep    2
     Element Text Should Be    ${SummaryMessage}    ${ERROR_MessageVoiceAdd/Edit}
 
 [F07-202]eServiceWeb-PO-Service-VoiceCalling-EditWithoutChangeData
+    Open Browser    ${eServiceURL}    ${BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
     Login
-    Click Element    ${btnService}
+    Click Web Element    ${btnService}
     sleep    2
-    Click Element    ${btnVoice_Add/Edit}
+    Click Web Element    ${btnVoice_Add/Edit}
     sleep    2
-    Click Element    ${btnServiceVoiceAdd/Edit(Save)}
+    Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
     sleep    2
     Element Text Should Be    ${DialogMessage}    ${ERROR_MessageVoiceAdd_NoDataUpdate}
 
 [F07-203]eServiceWeb-PO-Service-VoiceCalling-AddWithOnlyInputName
+    Open Browser    ${eServiceURL}    ${BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
     Login
-    Click Element    ${btnService}
+    Click Web Element    ${btnService}
     sleep    2
-    Click Element    ${btnVoice_Add/Edit}
+    Click Web Element    ${btnVoice_Add/Edit}
     sleep    2
-    Input Text    ${ServiceVoiceAddInputName}    สมชาย
-    Click Element    ${btnServiceVoiceAdd/Edit(Save)}
+    Input Web Text    ${ServiceVoiceAddInputName}    สมชาย
+    Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
     sleep    2
     Element Text Should Be    ${DialogMessage}    ${ERROR_MessageVoiceAdd_InsertMobile}
 
 [F07-204]eServiceWeb-PO-Service-VoiceCalling-AddWithOnlyInputSpell
+    Open Browser    ${eServiceURL}    ${BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
     Login
-    Click Element    ${btnService}
+    Click Web Element    ${btnService}
     sleep    2
-    Click Element    ${btnVoice_Add/Edit}
+    Click Web Element    ${btnVoice_Add/Edit}
     sleep    2
-    Input Text    ${ServiceVoice_Spell1}    สม
-    Input Text    ${ServiceVoice_Spell2}    ชาย
-    Click Element    ${btnServiceVoiceAdd/Edit(Save)}
+    Input Web Text    ${ServiceVoice_Spell1}    สม
+    Input Web Text    ${ServiceVoice_Spell2}    ชาย
+    Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
     sleep    2
     Element Text Should Be    ${DialogMessage}    ${ERROR_MessageVoiceAdd_InsertName}
 
 [F07-205]eServiceWeb-PO-Service-VoiceCalling-AddWithOnlyInputNumber
+    Open Browser    ${eServiceURL}    ${BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
     Login
-    Click Element    ${btnService}
+    Click Web Element    ${btnService}
     sleep    2
-    Click Element    ${btnVoice_Add/Edit}
+    Click Web Element    ${btnVoice_Add/Edit}
     sleep    2
-    Input Text    ${ServiceVoice_InsertMobile}    0930208945
-    Click Element    ${btnServiceVoiceAdd/Edit(Save)}
+    Input Web Text    ${ServiceVoice_InsertMobile}    0930208945
+    Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
     sleep    2
     Element Text Should Be    ${DialogMessage}    ${ERROR_MessageVoiceAdd_InsertName}
 
 [F07-206]eServiceWeb-PO-Service-VoiceCalling-AddWithEngSpell
+    Open Browser    ${eServiceURL}    ${BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
     Login
-    Click Element    ${btnService}
+    Click Web Element    ${btnService}
     sleep    2
-    Click Element    ${btnVoice_Add/Edit}
+    Click Web Element    ${btnVoice_Add/Edit}
     sleep    2
-    Input Text    ${ServiceVoice_Spell1}    s
+    Input Web Text    ${ServiceVoice_Spell1}    s
     Element Text Should Be    ${DialogMessage}    ${ERROR_MessageVoiceAdd_ThaiOnly}
 
 [F07-207]eServiceWeb-PO-Service-VoiceCalling-AddWithIncorrectSpell
+    Open Browser    ${eServiceURL}    ${BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
     Login
-    Click Element    ${btnService}
+    Click Web Element    ${btnService}
     sleep    2
-    Click Element    ${btnVoice_Add/Edit}
+    Click Web Element    ${btnVoice_Add/Edit}
     sleep    2
-    Input Text    ${ServiceVoiceAddInputName}    สมชาย
-    Input Text    ${ServiceVoice_InsertMobile}    0930208945
-    Input Text    ${ServiceVoice_Spell1}    อา
-    Input Text    ${ServiceVoice_Spell2}    ป้
-    Click Element    ${btnServiceVoiceAdd/Edit(Save)}
+    Input Web Text    ${ServiceVoiceAddInputName}    สมชาย
+    Input Web Text    ${ServiceVoice_InsertMobile}    0930208945
+    Input Web Text    ${ServiceVoice_Spell1}    อา
+    Input Web Text    ${ServiceVoice_Spell2}    ป้
+    Click Web Element    ${btnServiceVoiceAdd/Edit(Save)}
     sleep    2
     Element Text Should Be    ${SummaryMessage}    ${ERROR_MessageVoiceAdd_IncorrectSpell}
 
 [F07-208]eServiceWeb-PO-Service-VoiceCalling-AddWithNonNumericalNumber
+    Open Browser    ${eServiceURL}    ${BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
     Login
-    Click Element    ${btnService}
+    Click Web Element    ${btnService}
     sleep    2
-    Click Element    ${btnVoice_Add/Edit}
+    Click Web Element    ${btnVoice_Add/Edit}
     sleep    2
-    Input Text    ${ServiceVoice_InsertMobile}    ส
+    Input Web Text    ${ServiceVoice_InsertMobile}    ส
     Element Text Should Be    ${DialogMessage}    ${ERROR_MessageVoiceAdd_NumberOnly}
