@@ -2,3 +2,4 @@
 ${btnServiceSendSMSMMS}    //*[@id="menu-20"]
 ${btnOKSMSMMS}    //*[@id="btnServiceSendSMSMMSSubmit"]
 ${ServiceSMSMMS_InsertNumber1}    //*[@id="txtServiceSendSMSMMSReceivedNumber0"]
+${InputSMS_Message}    xpath=//*[@id="SMSMessage"]

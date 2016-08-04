@@ -5,33 +5,56 @@ Resource          ${LANG}/eServiceWebPostPaidSandSMSMMSMessage.txt
 Resource          Repository/eServiceWebPostPaidSandSMSMMSRepository.txt
 
 *** Test Cases ***
-[F07-209]eServiceWeb-PO-Service-SendSMS-NoFillAny-Immediate
+[F07-209]eServiceWeb_PO_Service_SendSMS_NoFillAny_Immediate
     Login
-    Click Element    ${btnService}
+    Selenium2Library.Click Element    ${btnService}
     sleep    2
-    Click Element    ${btnServiceSendSMSMMS}
+    Selenium2Library.Click Element    ${btnServiceSendSMSMMS}
     sleep    2
-    Click Element    ${btnOKSMSMMS}
+    Selenium2Library.Click Element    ${btnOKSMSMMS}
     sleep    2
-    Element Text Should Be    ${DialogMessage}    ${ERROR_MessageSMSMMS_Destination}
+    Element Should Contain    ${DialogMessage}    ${ERROR_MessageSMSMMS_Destination}
 
 [F07-210]eServiceWeb_PO_Service_SendSMS_NotCompletNumber_Immediate
     Login
-    Click Element    ${btnService}
+    Selenium2Library.Click Element    ${btnService}
     sleep    2
-    Click Element    ${btnServiceSendSMSMMS}
+    Selenium2Library.Click Element    ${btnServiceSendSMSMMS}
     sleep    2
-    Input Text    ${ServiceSMSMMS_InsertNumber1}    098111
+    Selenium2Library.Input Text    ${ServiceSMSMMS_InsertNumber1}    09112
+    Selenium2Library.Click Element    ${btnOKSMSMMS}
     sleep    2
-    Click Element    ${btnOKSMSMMS}
-    sleep    2
-    Element Text Should Be    ${DialogMessage}    ${ERROR_MessageSMSMMS_10digit}
+    Element Should Contain    ${DialogMessage}    ${ERROR_MessageSMSMMS_10digit}
 
 [F07-211]eServiceWeb_PO_Service_SendSMS_FillCharacterInPhoneNumber_Immediate
     Login
-    Click Element    ${btnService}
+    Selenium2Library.Click Element    ${btnService}
     sleep    2
-    Click Element    ${btnServiceSendSMSMMS}
+    Selenium2Library.Click Element    ${btnServiceSendSMSMMS}
     sleep    2
-    Input Text    ${ServiceSMSMMS_InsertNumber1}    ส
-    Element Text Should Be    ${DialogMessage}    ${ERROR_MessageSMSMMS_NumberOnly}
+    Selenium2Library.Input Text    ${ServiceSMSMMS_InsertNumber1}    ส
+    sleep    2
+    Element Should Contain    ${DialogMessage}    ${ERROR_MessageSMSMMS_NumberOnly}
+
+[F07-212]eServiceWeb_PO_Service_SendSMS_NotFillAnyNumber_Immediate
+    Login
+    Selenium2Library.Click Element    ${btnService}
+    sleep    2
+    Selenium2Library.Click Element    ${btnServiceSendSMSMMS}
+    sleep    2
+    Selenium2Library.Input Password    ${InputSMS_Message}    Hello
+    sleep    2
+    Selenium2Library.Click Element    ${btnOKSMSMMS}
+    sleep    2
+    Element Should Contain    ${DialogMessage}    ${ERROR_MessageSMSMMS_Destination}
+
+[F07-213]eServiceWeb-PO-Service-SendSMS-NotFillMessage-Immediate
+    Login
+    Selenium2Library.Click Element    ${btnService}
+    sleep    2
+    Selenium2Library.Click Element    ${btnServiceSendSMSMMS}
+    sleep    2
+    Selenium2Library.Input Text    ${ServiceSMSMMS_InsertNumber1}    0923026951
+    Selenium2Library.Click Element    ${btnOKSMSMMS}
+    sleep    2
+    Element Should Contain    ${DialogMessage}    ${ERROR_PleaseMessage}
