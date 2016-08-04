@@ -2,13 +2,8 @@
 ${Language}       xpath=//*[@ng-click="langService.setLang('${LANG}')"]
 ${MobileNumber}    id=textfield
 ${GetOTP}         id=btnLoginGetOtpMethod
-${SummaryMessage}    xpath=//*[@id="txtAlertMessage"]
 ${InputOTP}       //*[@id="inputOtpNumber"]
-${OTP}            ${EMPTY}
-${SMSOTP}         ${EMPTY}
 ${OKOTP}          //*[@id="lnkLoginLoginWithOtp"]
-${Otp}            xpath=//*[@id="inputOtpNumber"]
-${LoginOtp}       xpath=//*[@id="lnkLoginLoginWithOtp" and @class="button_all bt_color_green_t"]
 ${MainPageCustomerNumber}    xpath=//*[@id="sideinnerTop"]/div[2]
 ${MenuPackage}    xpath=//*[@id="menu-2"]
 ${SubMenuMySuperPlan}    xpath=//*[@id="menu-107"]
