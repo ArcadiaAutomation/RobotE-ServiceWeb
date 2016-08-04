@@ -6,3 +6,6 @@ ${ERROR_PleaseMessage}    Please enter your message.
 ${ERROR_Message_THMorethan335}    Please enter the message you would like to send (maximum 335 characters).
 ${ERROR_Message_ENMornthan765}    Please enter the message you would like to send (maximum 765 characters).
 ${ERROR_Message_NumericOnly}    Please enter numeric data only.
+${Month_Future_EN}    August
+${Year_Future_EN}    2016
+${ERROR_Message_AfterToDay}    Please enter a date which is after today's date.

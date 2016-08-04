@@ -122,3 +122,35 @@ Resource          Resource/eServiceWebPostPaidSandSMSMMSResource.txt
     Selenium2Library.Click Element    ${btnOKSMSMMS}
     sleep    2
     Element Should Contain    ${DialogMessage}    ${ERROR_MessageSMSMMS_Destination}
+    Close Browser
+
+[F07-219]eServiceWeb-PO-Service-SendSMS-NotFillMessage-Future
+    Login
+    Selenium2Library.Click Element    ${btnService}
+    sleep    2
+    Selenium2Library.Click Element    ${btnServiceSendSMSMMS}
+    sleep    2
+    Selenium2Library.Click Element    ${btnSMS_Future}
+    Selenium2Library.Input Text    ${ServiceSMSMMS_InsertNumber1}    0923026951
+    Selenium2Library.Click Element    ${btnOKSMSMMS}
+    sleep    2
+    Element Should Contain    ${DialogMessage}    ${ERROR_PleaseMessage}
+
+[F07-220]eServiceWeb-PO-Service-SendSMS-BeforeToDay-Future
+    Login
+    Selenium2Library.Click Element    ${btnService}
+    sleep    2
+    Selenium2Library.Click Element    ${btnServiceSendSMSMMS}
+    sleep    2
+    Selenium2Library.Click Element    ${btnSMS_Future}
+    Selenium2Library.Input Text    ${ServiceSMSMMS_InsertNumber1}    0923026951
+    Selenium2Library.Input Password    ${InputSMS_Message}    Hello
+    Select From List    ${Date_Future}    0
+    Select From List    ${Month_Future}    0
+    Select From List    ${Year_Future}    0
+    Select From List    ${Time_Future}    0
+    Select From List    ${Hrs_Future}    0
+    sleep    2
+    Selenium2Library.Click Element    ${btnOKSMSMMS}
+    sleep    2
+    Element Should Contain    ${DialogMessage}    ${ERROR_Message_AfterToDay}
