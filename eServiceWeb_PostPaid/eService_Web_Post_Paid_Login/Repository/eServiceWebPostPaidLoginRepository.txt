@@ -9,3 +9,4 @@ ${MenuPackage}    xpath=//*[@id="menu-2"]
 ${SubMenuMySuperPlan}    xpath=//*[@id="menu-107"]
 ${MySuperPlanImage}    xpath=/html/body/div[3]/div[2]/div[3]/div/div/div/div/div/div/div/div/div/div/form/div/table/tbody/tr[5]/td/img
 ${ConfirmMySuperPlan}    xpath=//*[@id="btn_ok"]
+${Tooltip}        xpath=//*[@id="login_fill"]/div/div[3]/div[2]/div/div[2]
