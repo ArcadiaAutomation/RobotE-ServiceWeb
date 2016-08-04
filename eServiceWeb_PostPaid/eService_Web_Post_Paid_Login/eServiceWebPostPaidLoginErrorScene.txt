@@ -31,18 +31,6 @@ Resource          ../ResourceKeywords.txt
     Element Text Should Be    ${ToolTipMessage}    ${ERRROR_NumberDtac}
     Close Browser
 
-[F01-003]eServiceWeb-PO-Login-FillOTPNotComplete
-    Selenium2Library.Open Browser    ${eServiceURL}    ${BROWSER}
-    Selenium2Library.Maximize Browser Window
-    Selenium2Library.Select Frame    ${MainIframe}
-    Selenium2Library. Click Element    ${Language}
-    Selenium2Library.Input Text    ${MobileNumber}    0613851339
-    Selenium2Library.Click Element    ${GetOTP}
-    ${OTPMessage}    Getsms    AIS    127.0.0.1    1    2a82ee4d
-    ${OTP}    getOTPinSMS    ${OTPMessage}
-    Log To Console    ${OTP}
-    Selenium2Library.Input Text    ${InputOTP}    ${OTP}
-
 [F01-003]eServiceWeb-PO-Login-OtpNotcomplete
     Open Browser    ${eServiceURL}    gc
     Maximize Browser Window
@@ -70,4 +58,13 @@ Resource          ../ResourceKeywords.txt
 
 test
     [Tags]    test
-    Login
+    Selenium2Library.Open Browser    ${eServiceURL}    ${BROWSER}
+    Selenium2Library.Maximize Browser Window
+    Selenium2Library.Select Frame    ${MainIframe}
+    Selenium2Library.Click Element    ${Language}
+    Selenium2Library.Input Text    ${MobileNumber}    0613851339
+    Selenium2Library.Click Element    ${GetOTP}
+    ${OTPMessage}    Getsms    AIS    127.0.0.1    1    2a82ee4d
+    ${OTP}    getOTPinSMS    ${OTPMessage}
+    Log To Console    ${OTP}
+    Selenium2Library.Input Text    ${InputOTP}    ${OTP}
