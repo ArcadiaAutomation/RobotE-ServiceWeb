@@ -6,7 +6,7 @@ Resource          Resource/eServiceWebPostPaidServiceVoiceCallingResource.txt
 *** Test Cases ***
 [F07-199]eServiceWeb-PO-Service-VoiceCalling-EditOnNonRegisteredNumber
     Login
-    Selenium2Library.Click Element    ${btnService}
+    Click Web Element    ${btnService}
     sleep    2
     Selenium2Library.Click Element    ${btnVoice_Register}
     sleep    2

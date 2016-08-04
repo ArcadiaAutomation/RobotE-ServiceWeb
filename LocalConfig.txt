@@ -1,0 +1,10 @@
+*** Variables ***
+${BrowserType}    D:\FirefoxPortable\FirefoxPortable.exe
+${eServiceUrl}    https://eservice.ais.co.th/eServiceWeb;jsessionid=lQn5jLsi12y-BXczayTsYFUT.undefined
+${GeneralTimeOut}    300
+${ProgressTimeOut}    60
+${adb:RUN_3PO_1}    8f65cc76
+${adb:RUN_3PO_1_Number}    0923026951
+${adb:RUN_3PO_1_NumberDtac}    0900500560
+${adb:RUN_3PO_2}    2a82ee4d
+${adb:RUN_3PO_2_Number}    0613851273

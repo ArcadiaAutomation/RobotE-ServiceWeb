@@ -1,16 +1,19 @@
 *** Settings ***
-Resource          ../Resource/ResourceKeywords.txt
 Resource          ${LANG}/eServiceWebPostPaidSandSMSMMSMessage.txt
 Resource          Resource/eServiceWebPostPaidSandSMSMMSResource.txt
 
 *** Test Cases ***
 [F07-209]eServiceWeb_PO_Service_SendSMS_NoFillAny_Immediate
+    Open Browser    ${eServiceUrl}    ${BrowserType}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
     Login
-    Selenium2Library.Click Element    ${btnService}
+    Click Web Element    ${btnService}
     sleep    2
-    Selenium2Library.Click Element    ${btnServiceSendSMSMMS}
+    Click Web Element    ${btnServiceSendSMSMMS}
     sleep    2
-    Selenium2Library.Click Element    ${btnOKSMSMMS}
+    Click Web Element    ${btnOKSMSMMS}
     sleep    2
     Element Should Contain    ${DialogMessage}    ${ERROR_MessageSMSMMS_Destination}
     Close Browser
