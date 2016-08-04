@@ -1,8 +1,6 @@
 *** Settings ***
 Resource          Repository/eServiceWebPostPaidRepository.txt
 Resource          eService_Web_Post_Paid_Login/Repository/eServiceWebPostPaidLoginRepository.txt
-Library           Selenium2Library
-Library           AppiumLibrary
 Library           ../Library/GetSMSfromMOOD.py
 Library           ../Library/getString.py
 

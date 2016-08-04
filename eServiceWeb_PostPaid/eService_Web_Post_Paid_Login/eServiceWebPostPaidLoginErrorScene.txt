@@ -1,11 +1,7 @@
 *** Settings ***
-Library           Selenium2Library
-Library           AppiumLibrary
 Resource          ../Repository/eServiceWebPostPaidRepository.txt
 Resource          Repository/eServiceWebPostPaidLoginRepository.txt
 Resource          ${LANG}/eServiceWebPostPaidLoginMessage.txt
-Library           ../../Library/getString.py
-Library           ../../Library/GetSMSfromMOOD.py
 Resource          ../ResourceKeywords.txt
 
 *** Test Cases ***
@@ -30,18 +26,6 @@ Resource          ../ResourceKeywords.txt
     Wait Until Page Contains Element    ${ToolTipMessage}
     Element Text Should Be    ${ToolTipMessage}    ${ERRROR_NumberDtac}
     Close Browser
-
-[F01-003]eServiceWeb-PO-Login-FillOTPNotComplete
-    Selenium2Library.Open Browser    ${eServiceURL}    ${BROWSER}
-    Selenium2Library.Maximize Browser Window
-    Selenium2Library.Select Frame    ${MainIframe}
-    Selenium2Library. Click Element    ${Language}
-    Selenium2Library.Input Text    ${MobileNumber}    0613851339
-    Selenium2Library.Click Element    ${GetOTP}
-    ${OTPMessage}    Getsms    AIS    127.0.0.1    1    2a82ee4d
-    ${OTP}    getOTPinSMS    ${OTPMessage}
-    Log To Console    ${OTP}
-    Selenium2Library.Input Text    ${InputOTP}    ${OTP}
 
 [F01-003]eServiceWeb-PO-Login-OtpNotcomplete
     Open Browser    ${eServiceURL}    gc
@@ -70,6 +54,19 @@ Resource          ../ResourceKeywords.txt
 
 test
     [Tags]    test
+<<<<<<< HEAD
     Login
 
 [F01-004]eServiceWeb-PO-Login-InputWrongOtp
+=======
+    Selenium2Library.Open Browser    ${eServiceURL}    ${BROWSER}
+    Selenium2Library.Maximize Browser Window
+    Selenium2Library.Select Frame    ${MainIframe}
+    Selenium2Library.Click Element    ${Language}
+    Selenium2Library.Input Text    ${MobileNumber}    0613851339
+    Selenium2Library.Click Element    ${GetOTP}
+    ${OTPMessage}    Getsms    AIS    127.0.0.1    1    2a82ee4d
+    ${OTP}    getOTPinSMS    ${OTPMessage}
+    Log To Console    ${OTP}
+    Selenium2Library.Input Text    ${InputOTP}    ${OTP}
+>>>>>>> origin/master
