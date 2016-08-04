@@ -1,6 +1,6 @@
 *** Variables ***
-${BrowserType}    D:\FirefoxPortable\FirefoxPortable.exe
-${eServiceUrl}    https://eservice.ais.co.th/eServiceWeb;jsessionid=lQn5jLsi12y-BXczayTsYFUT.undefined
+${BrowserType}    gc
+${eServiceUrl}    https://eservice.ais.co.th/eServiceWeb
 ${GeneralTimeOut}    300
 ${ProgressTimeOut}    60
 ${adb:RUN_3PO_1}    8f65cc76
