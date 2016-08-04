@@ -11,7 +11,7 @@ Resource          ../Resource/ResourceKeywords.txt
     Click Web Element    ${Language}
     Input Web Text    ${MobileNumber}    ${adb:RUN_3PO_1_Number}
     Click Web Element    ${GetOTP}
-    ${SMSOTP}    Get SM Sfrom Mood    AIS    10.239.223.84:4725    1    0123456789ABCDEF
+    ${SMSOTP}    Get SM Sfrom Mood    AIS    ${IPAppium:3PO_1}    1    ${adb:RUN_3PO_1}
     ${OtpNumber}    GetOTPinSMS    ${SMSOTP}
     Input Web Text    ${InputOTP}    ${OtpNumber}
     Click Web Element    ${OKOTP}
