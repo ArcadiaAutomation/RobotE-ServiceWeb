@@ -2,22 +2,22 @@
 Resource          Repositiry/eServiceWebPostPaidVoiceCallingRepository.txt
 Resource          ${LANG}/eServiceWebPostPaidVoiceCallingMessage.txt
 Resource          ../Repository/eServiceWebPostPaidRepository.txt
-Library           ../ResourceKeywords.txt
+Resource          ../ResourceKeywords.txt
 
 *** Test Cases ***
 [F07-199]eServiceWeb-PO-Service-VoiceCalling-EditOnNonRegisteredNumber
     Login
-    Click Element    ${btnService}
+    Selenium2Library.Click Element    ${btnService}
     sleep    2
-    Click Element    ${btnVoice_Register}
+    Selenium2Library.Click Element    ${btnVoice_Register}
     sleep    2
     Element Text Should Be    ${SummaryMessage}    ${ERROR_MessageVoiceRegister}
 
 [F07-200]eServiceWeb-PO-Service-VoiceCalling-RegisterOnRegisteredNumber
     Login
-    Click Element    ${btnService}
+    Selenium2Library.Click Element    ${btnService}
     sleep    2
-    Click Element    ${btnVoice_Add/Edit}
+    Selenium2Library.Click Element    ${btnVoice_Add/Edit}
     sleep    2
     Element Text Should Be    ${SummaryMessage}    ${ERROR_MessageVoiceAdd/Edit}
 
@@ -103,35 +103,4 @@ Library           ../ResourceKeywords.txt
     Click Element    ${btnVoice_Add/Edit}
     sleep    2
     Input Text    ${ServiceVoice_InsertMobile}    ส
-    Element Text Should Be    ${DialogMessage}    ${ERROR_MessageVoiceAdd_NumberOnly}
-
-[F07-209]eServiceWeb-PO-Service-SendSMS-NoFillAny-Immediate
-    Login
-    Click Element    ${btnService}
-    sleep    2
-    Click Element    ${btnServiceSendSMSMMS}
-    sleep    2
-    Click Element    ${btnOKSMSMMS}
-    sleep    2
-    Element Text Should Be    ${DialogMessage}    ${ERROR_MessageSMSMMS_Destination}
-
-[F07-210]eServiceWeb_PO_Service_SendSMS_NotCompletNumber_Immediate
-    Login
-    Click Element    ${btnService}
-    sleep    2
-    Click Element    ${btnServiceSendSMSMMS}
-    sleep    2
-    Input Text    ${ServiceSMSMMS_InsertNumber1}    098111
-    sleep    2
-    Click Element    ${btnOKSMSMMS}
-    sleep    2
-    Element Text Should Be    ${DialogMessage}    ${ERROR_MessageSMSMMS_10digit}
-
-[F07-211]eServiceWeb_PO_Service_SendSMS_FillCharacterInPhoneNumber_Immediate
-    Login
-    Click Element    ${btnService}
-    sleep    2
-    Click Element    ${btnServiceSendSMSMMS}
-    sleep    2
-    Input Text    ${ServiceSMSMMS_InsertNumber1}    ส
     Element Text Should Be    ${DialogMessage}    ${ERROR_MessageVoiceAdd_NumberOnly}

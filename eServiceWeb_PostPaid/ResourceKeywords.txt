@@ -12,9 +12,9 @@ Login
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Selenium2Library.Click Element    ${Language}
-    Selenium2Library.Input Text    ${MobileNumber}    0613851339
+    Selenium2Library.Input Text    ${MobileNumber}    0923026951
     Selenium2Library.Click Element    ${GetOTP}
-    ${SMSOTP}    Getsms    AIS    127.0.0.1    1    2a82ee4d
+    ${SMSOTP}    Getsms    AIS    10.239.223.71    1    8f65cc76
     ${OTP}    getOTPinSMS    ${SMSOTP}
     Selenium2Library.Input Text    ${InputOTP}    ${OTP}
     Selenium2Library.Click Element    ${OKOTP}

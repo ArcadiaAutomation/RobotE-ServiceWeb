@@ -2,24 +2,11 @@
 ${Language}       xpath=//*[@ng-click="langService.setLang('${LANG}')"]
 ${MobileNumber}    id=textfield
 ${GetOTP}         id=btnLoginGetOtpMethod
-${btnService}     xpath=//*[@id="menu-17"]
-${btnServiceVoiceRegister}    xpath=//*[@id="menu-117"]
-${SummaryMessage}    xpath=//*[@id="txtAlertMessage"]/div
-${btnServiceVoiceAdd/Edit}    xpath=//*[@id="menu-118"]
-${btnServiceVoiceCancel}    xpath=//*[@id="menu-119"]
-${btnServiceVoiceAdd/Edit(Save)}    id=btnVoiceCallSave
-${DialogMessage}    id=popup_detail
-${ServiceVoiceAddInputName}    //*[@id="txtVoiceCallEditName0"]
-${ServiceVoice_Spell1}    id=txtVoiceCallSpellNameEdit0
-${ServiceVoice_Spell2}    id=txtVoiceCallSpellNameEdit1
-${ServiceVoice_InsertMobile}    //*[@id="txtVoiceCallPhoneNoEdit0"]
+${SummaryMessage}    xpath=//*[@id="txtAlertMessage"]
 ${InputOTP}       //*[@id="inputOtpNumber"]
 ${OTP}            ${EMPTY}
 ${SMSOTP}         ${EMPTY}
 ${OKOTP}          //*[@id="lnkLoginLoginWithOtp"]
-${btnServiceSendSMSMMS}    //*[@id="menu-20"]
-${btnOKSMSMMS}    //*[@id="btnServiceSendSMSMMSSubmit"]
-${ServiceSMSMMS_InsertNumber1}    //*[@id="txtServiceSendSMSMMSReceivedNumber0"]
 ${Otp}            xpath=//*[@id="inputOtpNumber"]
 ${LoginOtp}       xpath=//*[@id="lnkLoginLoginWithOtp" and @class="button_all bt_color_green_t"]
 ${MainPageCustomerNumber}    xpath=//*[@id="sideinnerTop"]/div[2]

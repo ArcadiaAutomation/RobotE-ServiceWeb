@@ -1,0 +1,37 @@
+*** Settings ***
+Resource          ../Repository/eServiceWebPostPaidRepository.txt
+Resource          ../ResourceKeywords.txt
+Resource          ${LANG}/eServiceWebPostPaidSandSMSMMSMessage.txt
+Resource          Repository/eServiceWebPostPaidSandSMSMMSRepository.txt
+
+*** Test Cases ***
+[F07-209]eServiceWeb-PO-Service-SendSMS-NoFillAny-Immediate
+    Login
+    Click Element    ${btnService}
+    sleep    2
+    Click Element    ${btnServiceSendSMSMMS}
+    sleep    2
+    Click Element    ${btnOKSMSMMS}
+    sleep    2
+    Element Text Should Be    ${DialogMessage}    ${ERROR_MessageSMSMMS_Destination}
+
+[F07-210]eServiceWeb_PO_Service_SendSMS_NotCompletNumber_Immediate
+    Login
+    Click Element    ${btnService}
+    sleep    2
+    Click Element    ${btnServiceSendSMSMMS}
+    sleep    2
+    Input Text    ${ServiceSMSMMS_InsertNumber1}    098111
+    sleep    2
+    Click Element    ${btnOKSMSMMS}
+    sleep    2
+    Element Text Should Be    ${DialogMessage}    ${ERROR_MessageSMSMMS_10digit}
+
+[F07-211]eServiceWeb_PO_Service_SendSMS_FillCharacterInPhoneNumber_Immediate
+    Login
+    Click Element    ${btnService}
+    sleep    2
+    Click Element    ${btnServiceSendSMSMMS}
+    sleep    2
+    Input Text    ${ServiceSMSMMS_InsertNumber1}    ส
+    Element Text Should Be    ${DialogMessage}    ${ERROR_MessageSMSMMS_NumberOnly}

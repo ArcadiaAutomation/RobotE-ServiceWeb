@@ -1,0 +1,4 @@
+*** Variables ***
+${ERROR_MessageSMSMMS_Destination}    กรุณาระบุ เบอร์ผู้รับ
+${ERROR_MessageSMSMMS_10digit}    คุณระบุหมายเลขโทรศัพท์ไม่ถูกต้อง กรุณาระบุเป็นตัวเลข 10 หลักที่ถูกต้องอีกครั้ง
+${ERROR_MessageSMSMMS_NumberOnly}    กรุณาระบุเป็นตัวเลขเท่านั้น
