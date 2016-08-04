@@ -1,1 +1,6 @@
+*** Settings ***
+Resource          ../ResourceKeywords.txt
+Resource          ${LANG}/eServiceWebPostPaidSandSMSMMSMessage.txt
+Resource          Resource/eServiceWebPostPaidSandSMSMMSResource.txt
+
 *** Test Cases ***

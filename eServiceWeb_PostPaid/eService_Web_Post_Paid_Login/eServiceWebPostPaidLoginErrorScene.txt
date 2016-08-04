@@ -1,12 +1,6 @@
 *** Settings ***
-Library           Selenium2Library
-Library           AppiumLibrary
-Resource          ../Repository/eServiceWebPostPaidRepository.txt
-Resource          Repository/eServiceWebPostPaidLoginRepository.txt
+Resource          resource/eServiceWebPostPaidLoginResource.txt
 Resource          ${LANG}/eServiceWebPostPaidLoginMessage.txt
-Library           ../../Library/getString.py
-Library           ../../Library/GetSMSfromMOOD.py
-Resource          ../ResourceKeywords.txt
 
 *** Test Cases ***
 [F01-001]eServiceWeb-PO-Login-NumberNotComplete

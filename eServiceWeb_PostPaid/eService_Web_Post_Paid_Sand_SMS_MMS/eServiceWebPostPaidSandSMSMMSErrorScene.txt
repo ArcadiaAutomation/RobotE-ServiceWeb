@@ -1,8 +1,7 @@
 *** Settings ***
-Resource          ../Repository/eServiceWebPostPaidRepository.txt
 Resource          ../ResourceKeywords.txt
 Resource          ${LANG}/eServiceWebPostPaidSandSMSMMSMessage.txt
-Resource          Repository/eServiceWebPostPaidSandSMSMMSRepository.txt
+Resource          Resource/eServiceWebPostPaidSandSMSMMSResource.txt
 
 *** Test Cases ***
 [F07-209]eServiceWeb_PO_Service_SendSMS_NoFillAny_Immediate
