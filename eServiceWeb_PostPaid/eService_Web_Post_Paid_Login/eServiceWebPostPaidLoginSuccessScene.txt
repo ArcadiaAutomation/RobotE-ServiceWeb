@@ -1,11 +1,7 @@
 *** Settings ***
-Library           Selenium2Library
-Library           AppiumLibrary
 Resource          ../Repository/eServiceWebPostPaidRepository.txt
 Resource          Repository/eServiceWebPostPaidLoginRepository.txt
 Resource          ${LANG}/eServiceWebPostPaidLoginMessage.txt
-Library           ../../Library/GetSMSfromMOOD.py
-Library           ../../Library/GetSMSfromMOOD.py
 
 *** Test Cases ***
 [S01-001]eServiceWeb-PO-LoginSuccess
@@ -16,7 +12,7 @@ Library           ../../Library/GetSMSfromMOOD.py
     Input Text    ${MobileNumber}    0613851273
     Click Element    ${GetOTP}
     ${SMSOTP}    Getsms    AIS    10.239.223.119    1    4d00643b4828a0df
-    ${OtpNumber}    Get OT Pin SMS    ${SMSOTP}
+    ${OtpNumber}    GetOTPinSMS    ${SMSOTP}
     Input Text    ${Otp}    ${OtpNumber}
     Click Element    ${LoginOtp}
     Sleep    2

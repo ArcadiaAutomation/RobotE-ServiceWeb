@@ -1,6 +1,7 @@
 *** Settings ***
 Resource          resource/eServiceWebPostPaidLoginResource.txt
 Resource          ${LANG}/eServiceWebPostPaidLoginMessage.txt
+Resource          ../ResourceKeywords.txt
 
 *** Test Cases ***
 [F01-001]eServiceWeb-PO-Login-NumberNotComplete
@@ -62,3 +63,5 @@ test
     ${OTP}    getOTPinSMS    ${OTPMessage}
     Log To Console    ${OTP}
     Selenium2Library.Input Text    ${InputOTP}    ${OTP}
+
+[F01-004]eServiceWeb-PO-Login-InputWrongOtp
