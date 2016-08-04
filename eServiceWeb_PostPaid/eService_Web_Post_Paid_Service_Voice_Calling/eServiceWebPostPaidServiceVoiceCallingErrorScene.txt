@@ -1,8 +1,7 @@
 *** Settings ***
 Resource          ${LANG}/eServiceWebPostPaidVoiceCallingMessage.txt
-Resource          ../Repository/eServiceWebPostPaidRepository.txt
-Resource          ../ResourceKeywords.txt
-Resource          Repository/eServiceWebPostPaidVoiceCallingRepository.txt
+Resource          ../Resource/ResourceKeywords.txt
+Resource          Resource/eServiceWebPostPaidServiceVoiceCallingResource.txt
 
 *** Test Cases ***
 [F07-199]eServiceWeb-PO-Service-VoiceCalling-EditOnNonRegisteredNumber

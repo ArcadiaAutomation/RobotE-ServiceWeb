@@ -1,9 +1,8 @@
 *** Settings ***
-Resource          ../Repository/eServiceWebPostPaidRepository.txt
-Resource          Repository/eServiceWebPostPaidLoginRepository.txt
+Resource          Resource/eServiceWebPostPaidLoginResource.txt
 Resource          ${LANG}/eServiceWebPostPaidLoginMessage.txt
-Resource          ../ResourceKeywords.txt
 Resource          ../../KeywordsDuplicate/KeywordsDuplicate.txt
+Resource          ../Resource/ResourceKeywords.txt
 
 *** Test Cases ***
 [F01-001]eServiceWeb-PO-Login-NumberNotComplete
@@ -56,8 +55,6 @@ Resource          ../../KeywordsDuplicate/KeywordsDuplicate.txt
 test
     [Tags]    test
     Login
-
-[F01-004]eServiceWeb-PO-Login-InputWrongOtp
     Selenium2Library.Open Browser    ${eServiceURL}    ${BROWSER}
     Selenium2Library.Maximize Browser Window
     Selenium2Library.Select Frame    ${MainIframe}
@@ -68,3 +65,5 @@ test
     ${OTP}    getOTPinSMS    ${OTPMessage}
     Log To Console    ${OTP}
     Selenium2Library.Input Text    ${InputOTP}    ${OTP}
+
+[F01-004]eServiceWeb-PO-Login-InputWrongOtp

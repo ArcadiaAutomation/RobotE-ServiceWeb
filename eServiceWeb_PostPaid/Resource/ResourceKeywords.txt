@@ -1,8 +1,5 @@
 *** Settings ***
-Resource          Repository/eServiceWebPostPaidRepository.txt
-Resource          eService_Web_Post_Paid_Login/Repository/eServiceWebPostPaidLoginRepository.txt
-Library           ../Library/GetSMSfromMOOD.py
-Library           ../Library/getString.py
+Resource          ../eService_Web_Post_Paid_Login/Resource/eServiceWebPostPaidLoginResource.txt
 
 *** Keywords ***
 Login
