@@ -1,7 +1,7 @@
 *** Settings ***
-Resource          resource/eServiceWebPostPaidLoginResource.txt
+Resource          Resource/eServiceWebPostPaidLoginResource.txt
 Resource          ${LANG}/eServiceWebPostPaidLoginMessage.txt
-Resource          ../ResourceKeywords.txt
+Resource          ../Resource/ResourceKeywords.txt
 
 *** Test Cases ***
 [F01-001]eServiceWeb-PO-Login-NumberNotComplete

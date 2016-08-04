@@ -1,8 +1,6 @@
 *** Settings ***
-Library           Selenium2Library
-Library           AppiumLibrary
-Resource          ../Repository/eServiceWebPostPaidRepository.txt
-Library           ../../Library/GetSMSfromMOOD.py
-Library           ../../Library/getString.py
+Resource          ../Resource/ResourceKeywords.txt
+Resource          Resource/eServiceWebPostPaidMySuperPlanResource.txt
+Resource          ${LANG}/eServiceWebPostPaidLoginMessage.txt
 
 *** Test Cases ***
