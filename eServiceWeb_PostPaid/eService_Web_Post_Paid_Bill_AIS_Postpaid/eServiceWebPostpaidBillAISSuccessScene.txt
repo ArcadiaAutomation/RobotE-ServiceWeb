@@ -1,7 +1,8 @@
 *** Settings ***
 Resource          Resource/eServiceWebPostPaidBillAISPostpaidResource.txt
-Resource          ${LANG}/eServiceWebPostPaidBillAISPostpaidMessage.txt
+Resource          ../${ar_LANG}/eServiceWebPostPaidBillAISPostpaidMessage.txt
 Resource          ../Resource/ResourceKeywords.txt
+Resource          ../../KeywordsDuplicate/KeywordsDuplicate.txt
 
 *** TestCase ***
 [S05-001]eServiceWeb-PO-BillAISPostpaid-NotSelectPaymentType
@@ -9,5 +10,5 @@ Resource          ../Resource/ResourceKeywords.txt
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
-    Login    ${adb:RUN_3PO_1_Number}    ${IPAppium:3PO_1}    ${adb:RUN_3PO_1}
+    Login    ${lo_adb:RUN_3PO_1_Number}    ${lo_IPAppium:3PO_1}    ${lo_adb:RUN_3PO_1}
     SelectBillAISPostpaidMenu
