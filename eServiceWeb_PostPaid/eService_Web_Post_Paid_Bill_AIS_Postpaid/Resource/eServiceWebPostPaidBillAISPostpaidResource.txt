@@ -1,3 +1,10 @@
 *** Settings ***
 Resource          ../../Resource/eServiceWebPostPaidResource.txt
 Resource          ../Repository/eServiceWebPostPaidBillAISPostpaidRepository.txt
+
+*** Keywords ***
+SelectBillAISPostpaidMenu
+    Click Web Element    ${PaymentTopup}
+    Wait Until Element Is Visible    ${BillAISPostpaid}
+    Click Web Element    ${BillAISPostpaid}
+    Wait Until Element Is Visible    ${PageBillAISPostpaid}

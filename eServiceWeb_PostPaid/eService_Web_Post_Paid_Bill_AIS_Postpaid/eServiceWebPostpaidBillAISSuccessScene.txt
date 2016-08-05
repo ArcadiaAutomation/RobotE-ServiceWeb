@@ -4,7 +4,7 @@ Resource          ${LANG}/eServiceWebPostPaidBillAISPostpaidMessage.txt
 Resource          ../Resource/ResourceKeywords.txt
 
 *** TestCase ***
-[F05-001]eServiceWeb-PO-BillAISPostpaid-NotSelectPaymentType
+[S05-001]eServiceWeb-PO-BillAISPostpaid-NotSelectPaymentType
     Open Browser    ${eServiceURL}    ${BROWSER}
     Maximize Browser Window
     Select Frame    ${MainIframe}
