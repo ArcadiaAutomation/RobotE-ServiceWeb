@@ -7,8 +7,8 @@ Login
     [Arguments]    ${Number}    ${IPAppium}    ${SN}
     Input Web Text    ${MobileNumber}    ${Number}
     Click Web Element    ${GetOTP}
-    ${SMSOTP}    Get SM Sfrom Mood    AIS    ${IPAppium}    1    ${SN}
-    ${OTP}    getOTPinSMS    ${SMSOTP}
+    ${SMSOTP}    GetSMSfromMood    AIS    ${IPAppium}    1    ${SN}
+    ${OTP}    GetOTPinSMS    ${SMSOTP}
     Input Web Text    ${InputOTP}    ${OTP}
     Click Web Element    ${OKOTP}
     sleep    4
