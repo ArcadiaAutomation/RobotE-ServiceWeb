@@ -9,7 +9,7 @@ Resource          Resource/eServiceWebPostPaidLoginResource.txt
     Click Web Element    ${Language}
     Input Web Text    ${MobileNumber}    090546798
     Click Web Element    ${GetOTP}
-    Element Text Should Be    ${DialogMessage}    ${ERROR_NumberNotComplete}
+    Element Text Should Be    ${DialogMessage}    ${ERROR_MessageNumberNotComplete}
     Click Web Element    ${DialogClose}
     Close Browser
 
@@ -21,7 +21,7 @@ Resource          Resource/eServiceWebPostPaidLoginResource.txt
     Input Web Text    ${MobileNumber}    0944835961
     Click Web Element    ${GetOTP}
     Wait Web Until Page Contains Element    ${Tooltip}
-    Element Text Should Be    ${Tooltip}    ${ERRROR_NumberDtac}
+    Element Text Should Be    ${Tooltip}    ${ERROR_MessageNumberDtac}
     Close Browser
 
 [F01-003]eServiceWeb-PO-Login-OtpNotcomplete
