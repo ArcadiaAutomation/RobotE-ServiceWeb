@@ -8,6 +8,7 @@ Resource          Resource/eServiceWebPostPaidServiceVoiceCallingResource.txt
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
+    Sleep    3
     Login    0923026951    10.239.223.71:4723    8f65cc76
     Click Web Element    ${btnService}
     sleep    2
@@ -21,6 +22,7 @@ Resource          Resource/eServiceWebPostPaidServiceVoiceCallingResource.txt
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
+    Sleep    3
     Login    0923026951    10.239.223.71:4723    8f65cc76
     Click Web Element    ${btnService}
     sleep    2
@@ -34,6 +36,7 @@ Resource          Resource/eServiceWebPostPaidServiceVoiceCallingResource.txt
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
+    Sleep    3
     Login    0923026951    10.239.223.71:4723    8f65cc76
     Click Web Element    ${btnService}
     sleep    2
@@ -47,6 +50,7 @@ Resource          Resource/eServiceWebPostPaidServiceVoiceCallingResource.txt
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
+    Sleep    3
     Login    0923026951    10.239.223.71:4723    8f65cc76
     Click Web Element    ${btnService}
     sleep    2
@@ -62,6 +66,7 @@ Resource          Resource/eServiceWebPostPaidServiceVoiceCallingResource.txt
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
+    Sleep    3
     Login    0923026951    10.239.223.71:4723    8f65cc76
     Click Web Element    ${btnService}
     sleep    2
@@ -78,6 +83,7 @@ Resource          Resource/eServiceWebPostPaidServiceVoiceCallingResource.txt
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
+    Sleep    3
     Login    0923026951    10.239.223.71:4723    8f65cc76
     Click Web Element    ${btnService}
     sleep    2
@@ -95,6 +101,7 @@ Resource          Resource/eServiceWebPostPaidServiceVoiceCallingResource.txt
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
+    Sleep    3
     Login    0923026951    10.239.223.71:4723    8f65cc76
     Click Web Element    ${btnService}
     sleep    2
@@ -111,6 +118,7 @@ Resource          Resource/eServiceWebPostPaidServiceVoiceCallingResource.txt
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
+    Sleep    3
     Login    0923026951    10.239.223.71:4723    8f65cc76
     Click Web Element    ${btnService}
     sleep    2
@@ -125,6 +133,7 @@ Resource          Resource/eServiceWebPostPaidServiceVoiceCallingResource.txt
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
+    Sleep    3
     Login    0923026951    10.239.223.71:4723    8f65cc76
     Click Web Element    ${btnService}
     sleep    2
@@ -144,6 +153,7 @@ Resource          Resource/eServiceWebPostPaidServiceVoiceCallingResource.txt
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
+    Sleep    3
     Login    0923026951    10.239.223.71:4723    8f65cc76
     Click Web Element    ${btnService}
     sleep    2
