@@ -4,11 +4,11 @@ Resource          Resource/eServiceWebPostPaidSandSMSMMSResource.txt
 
 *** Test Cases ***
 [F07-209]eServiceWeb_PO_Service_SendSMS_NoFillAny_Immediate
-    Open Browser    ${eServiceURL}    ${BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
-    Login    0923026951    10.239.223.71:4723    8f65cc76
+    Login    0923026951    0.0.0.0:4723    8f65cc76
     Click Web Element    ${btnService}
     sleep    2
     Click Web Element    ${btnServiceSendSMSMMS}
@@ -23,7 +23,7 @@ Resource          Resource/eServiceWebPostPaidSandSMSMMSResource.txt
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
-    Login
+    Login    0923026951    10.239.223.71:4723    8f65cc76
     Click Web Element    ${btnService}
     sleep    2
     Click Web Element    ${btnServiceSendSMSMMS}
@@ -40,7 +40,7 @@ Resource          Resource/eServiceWebPostPaidSandSMSMMSResource.txt
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
-    Login
+    Login    0923026951    10.239.223.71:4723    8f65cc76
     Click Web Element    ${btnService}
     sleep    2
     Click Web Element    ${btnServiceSendSMSMMS}
@@ -55,7 +55,7 @@ Resource          Resource/eServiceWebPostPaidSandSMSMMSResource.txt
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
-    Login
+    Login    0923026951    10.239.223.71:4723    8f65cc76
     Click Web Element    ${btnService}
     sleep    2
     Click Web Element    ${btnServiceSendSMSMMS}
@@ -72,7 +72,7 @@ Resource          Resource/eServiceWebPostPaidSandSMSMMSResource.txt
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
-    Login
+    Login    0923026951    10.239.223.71:4723    8f65cc76
     Click Web Element    ${btnService}
     sleep    2
     Click Web Element    ${btnServiceSendSMSMMS}
@@ -88,7 +88,7 @@ Resource          Resource/eServiceWebPostPaidSandSMSMMSResource.txt
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
-    Login
+    Login    0923026951    10.239.223.71:4723    8f65cc76
     Click Web Element    ${btnService}
     sleep    2
     Click Web Element    ${btnServiceSendSMSMMS}
@@ -103,7 +103,7 @@ Resource          Resource/eServiceWebPostPaidSandSMSMMSResource.txt
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
-    Login
+    Login    0923026951    10.239.223.71:4723    8f65cc76
     Click Web Element    ${btnService}
     sleep    2
     Click Web Element    ${btnServiceSendSMSMMS}
@@ -118,7 +118,7 @@ Resource          Resource/eServiceWebPostPaidSandSMSMMSResource.txt
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
-    Login
+    Login    0923026951    10.239.223.71:4723    8f65cc76
     Click Web Element    ${btnService}
     sleep    2
     Click Web Element    ${btnServiceSendSMSMMS}
@@ -130,28 +130,12 @@ Resource          Resource/eServiceWebPostPaidSandSMSMMSResource.txt
     Element Should Contain    ${DialogMessage}    ${ERROR_MessageSMSMMS_10digit}
     Close Browser
 
-[F07-217]eServiceWeb-PO-Service-SendSMS-FillCharacterInPhoneNumber-Future
-    Open Browser    ${eServiceURL}    ${BROWSER}
-    Maximize Browser Window
-    Select Frame    ${MainIframe}
-    Click Web Element    ${Language}
-    Login
-    Click Web Element    ${btnService}
-    sleep    2
-    Click Web Element    ${btnServiceSendSMSMMS}
-    sleep    2
-    Click Web Element    ${btnSMS_Future}
-    Input Web Text    ${ServiceSMSMMS_InsertNumber1}    ส
-    sleep    2
-    Element Should Contain    ${DialogMessage}    ${ERROR_Message_NumericOnly}
-    Close Browser
-
 [F07-218]eServiceWeb-PO-Service-SendSMS-NotFillAnyNumber-Future
     Open Browser    ${eServiceURL}    ${BROWSER}
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
-    Login
+    Login    0923026951    10.239.223.71:4723    8f65cc76
     Click Web Element    ${btnService}
     sleep    2
     Click Web Element    ${btnServiceSendSMSMMS}
@@ -164,12 +148,28 @@ Resource          Resource/eServiceWebPostPaidSandSMSMMSResource.txt
     Element Should Contain    ${DialogMessage}    ${ERROR_MessageSMSMMS_Destination}
     Close Browser
 
+[F07-217]eServiceWeb-PO-Service-SendSMS-FillCharacterInPhoneNumber-Future
+    Open Browser    ${eServiceURL}    ${BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
+    Login    0923026951    10.239.223.71:4723    8f65cc76
+    Click Web Element    ${btnService}
+    sleep    2
+    Click Web Element    ${btnServiceSendSMSMMS}
+    sleep    2
+    Click Web Element    ${btnSMS_Future}
+    Input Web Text    ${ServiceSMSMMS_InsertNumber1}    ส
+    sleep    2
+    Element Should Contain    ${DialogMessage}    ${ERROR_Message_NumericOnly}
+    Close Browser
+
 [F07-219]eServiceWeb-PO-Service-SendSMS-NotFillMessage-Future
     Open Browser    ${eServiceURL}    ${BROWSER}
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
-    Login
+    Login    0923026951    10.239.223.71:4723    8f65cc76
     Click Web Element    ${btnService}
     sleep    2
     Click Web Element    ${btnServiceSendSMSMMS}
@@ -185,7 +185,7 @@ Resource          Resource/eServiceWebPostPaidSandSMSMMSResource.txt
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
-    Login
+    Login    0923026951    10.239.223.71:4723    8f65cc76
     Click Web Element    ${btnService}
     sleep    2
     Click Web Element    ${btnServiceSendSMSMMS}
@@ -208,7 +208,7 @@ Resource          Resource/eServiceWebPostPaidSandSMSMMSResource.txt
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
-    Login
+    Login    0923026951    10.239.223.71:4723    8f65cc76
     Click Web Element    ${btnService}
     sleep    2
     Click Web Element    ${btnServiceSendSMSMMS}

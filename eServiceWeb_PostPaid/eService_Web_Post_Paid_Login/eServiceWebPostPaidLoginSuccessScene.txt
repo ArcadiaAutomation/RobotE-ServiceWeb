@@ -7,6 +7,6 @@ Resource          Resource/eServiceWebPostPaidLoginResource.txt
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
-    Login    0613851273    10.239.223.119:4723    4d00643b4828a0df
+    Login    0923026951    10.239.223.71:4723    8f65cc76
     Sleep    2
     Element Should Be Visible    ${MainPageCustomerNumber}
