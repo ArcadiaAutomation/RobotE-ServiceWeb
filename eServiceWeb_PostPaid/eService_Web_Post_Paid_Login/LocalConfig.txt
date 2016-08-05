@@ -1,0 +1,10 @@
+*** Variables ***
+${lo_GeneralTimeOut}    300
+${lo_ProgressTimeOut}    60
+${lo_adb:RUN_3PO_1}    4d00643b4828a0df
+${lo_adb:RUN_3PO_1_Number}    0613851273
+${lo_adb:RUN_3PO_1_NumberDtac}    0900500560
+${adb:RUN_3PO_2}    2a82ee4d
+${adb:RUN_3PO_2_Number}    0613851273
+${lo_IPLocalHost}    10.239.223.119
+${lo_IPAppium}    10.239.223.119:4723
