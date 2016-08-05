@@ -3,13 +3,18 @@ Resource          Resource/eServiceWebPostPaidApplyOrChangeMySuperPlanResource.t
 
 *** Test Cases ***
 [F03-008]eServiceWeb-PO-MysuperPlan
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
+    Login    ${lo_adb:RUN_3PO_1_Number}    ${lo_IPAppium}    ${lo_adb:RUN_3PO_1}
+    Sleep    2
     Element Should Be Visible    ${MainPageCustomerNumber}
     Sleep    3
-    Click Element    ${MenuPackage}
+    Click Web Element    ${MenuPackage}
     Sleep    3
-    Click Element    ${SubMenuMySuperPlan}
+    Click Web Element    ${SubMenuMySuperPlan}
     Sleep    3
-    Click Image    ${MySuperPlanImage}
+    Variable Should Exist    ${MySuperPlanImage}
     Sleep    3
-    Click Element    ${ConfirmMySuperPlan}
-    Element Text Should Be    ${DialogMessage}    ${ERROR_NotSelectMySuperPlanPacKage}
+    Click Web Element    ${ConfirmMySuperPlan}

@@ -7,6 +7,6 @@ Resource          Resource/eServiceWebPostPaidLoginResource.txt
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
-    Login    0923026951    10.239.223.71:4723    8f65cc76
+    Login    ${lo_adb:RUN_3PO_1_Number}    ${lo_IPAppium}    ${lo_adb:RUN_3PO_1}
     Sleep    2
     Element Should Be Visible    ${MainPageCustomerNumber}
