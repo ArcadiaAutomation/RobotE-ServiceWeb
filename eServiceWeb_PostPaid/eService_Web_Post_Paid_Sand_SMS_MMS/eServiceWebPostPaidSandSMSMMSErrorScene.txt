@@ -179,6 +179,7 @@ Resource          Resource/eServiceWebPostPaidSandSMSMMSResource.txt
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
     Element Should Contain    ${DialogMessage}    ${ERROR_PleaseMessage}
+    Close Browser
 
 [F07-220]eServiceWeb-PO-Service-SendSMS-BeforeToDay-Future
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
@@ -202,6 +203,7 @@ Resource          Resource/eServiceWebPostPaidSandSMSMMSResource.txt
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
     Element Should Contain    ${DialogMessage}    ${ERROR_Message_AfterToDay}
+    Close Browser
 
 [F07-221]eServiceWeb-PO-Service-SendSMS-MoreThan30DayFromNow-Future
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
@@ -225,3 +227,4 @@ Resource          Resource/eServiceWebPostPaidSandSMSMMSResource.txt
     Click Web Element    ${btnOKSMSMMS}
     sleep    2
     Element Should Contain    ${DialogMessage}    ${ERROR_Message_AfterToDay}
+    Close Browser
