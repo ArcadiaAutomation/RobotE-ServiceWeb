@@ -1,3 +1,5 @@
 *** Settings ***
 Resource          ../../Resource/eServiceWebPostPaidResource.txt
 Resource          ../Repository/eServiceWebPostPaidVoiceCallingRepository.txt
+Resource          ../../../KeywordsDuplicate/KeywordsDuplicate.txt
+Resource          ../../Resource/ResourceKeywords.txt
