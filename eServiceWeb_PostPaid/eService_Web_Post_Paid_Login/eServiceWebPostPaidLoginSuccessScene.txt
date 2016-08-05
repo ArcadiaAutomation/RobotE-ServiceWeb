@@ -7,11 +7,6 @@ Resource          Resource/eServiceWebPostPaidLoginResource.txt
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
-    Input Web Text    ${MobileNumber}    ${lo_adb:RUN_3PO_1_Number}
-    Click Web Element    ${GetOTP}
-    ${SMSOTP}    Get SM Sfrom Mood    AIS    ${lo_IPAppium}    1    ${lo_adb:RUN_3PO_1}
-    ${OtpNumber}    GetOTPinSMS    ${SMSOTP}
-    Input Web Text    ${InputOTP}    ${OtpNumber}
-    Click Web Element    ${OKOTP}
+    Login    0613851273    10.239.223.119:4723    4d00643b4828a0df
     Sleep    2
     Element Should Be Visible    ${MainPageCustomerNumber}
