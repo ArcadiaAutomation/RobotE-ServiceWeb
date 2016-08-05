@@ -10,7 +10,7 @@ Resource          Resource/eServiceWebPostPaidSandSMSMMSResource.txt
     Click Web Element    ${Language}
     Login
     Click Web Element    ${btnService}
-    sleep    \    \    \    2
+    sleep    2
     Click Web Element    ${btnServiceSendSMSMMS}
     sleep    2
     Click Web Element    ${btnOKSMSMMS}

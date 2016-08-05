@@ -10,7 +10,7 @@ Resource          ../Resource/ResourceKeywords.txt
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
-    Input Web Text    ${MobileNumber}    061385133
+    Input Web Text    ${MobileNumber}    090546798
     Click Web Element    ${GetOTP}
     Element Text Should Be    ${DialogMessage}    ${ERROR_NumberNotComplete}
     Click Web Element    ${DialogClose}
@@ -89,6 +89,3 @@ test
     Sleep    2
     Click Web Element    ${CancelOtp}
     Element Text Should Be    ${MobileNumber}    ${EmptyMobileNumber}
-
-[Test_Login]
-    Login
