@@ -1,0 +1,2 @@
+*** Variables ***
+${ERROR_NotSelectMySuperPlanPacKage}    Please select my Super Plan that you want.
