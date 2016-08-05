@@ -3,3 +3,4 @@ ${MenuPackage}    xpath=//*[@id="menu-2"]
 ${SubMenuMySuperPlan}    xpath=//*[@id="menu-107"]
 ${MySuperPlanImage}    xpath=/html/body/div[3]/div[2]/div[3]/div/div/div/div/div/div/div/div/div/div/form/div/table/tbody/tr[5]/td/img
 ${ConfirmMySuperPlan}    xpath=//*[@id="btn_ok"]
+${MySuperPlanDialogMessage}    xpath=//*[@id="alert_layer_msg"]

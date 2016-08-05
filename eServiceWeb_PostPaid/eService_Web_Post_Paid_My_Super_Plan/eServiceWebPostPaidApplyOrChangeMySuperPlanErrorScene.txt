@@ -15,6 +15,9 @@ Resource          Resource/eServiceWebPostPaidApplyOrChangeMySuperPlanResource.t
     Sleep    3
     Click Web Element    ${SubMenuMySuperPlan}
     Sleep    3
-    Variable Should Exist    ${MySuperPlanImage}
+    Click Image    ${MySuperPlanImage}
     Sleep    3
     Click Web Element    ${ConfirmMySuperPlan}
+    Sleep    2
+    Element Text Should Be    ${MySuperPlanDialogMessage}    ${ERROR_NotSelectMySuperPlanPackage}
+    Close Browser
