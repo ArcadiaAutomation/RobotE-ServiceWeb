@@ -1,6 +1,6 @@
 *** Settings ***
 Resource          Resource/eServiceWebPostPaidBillAISPostpaidResource.txt
-Resource          ../${ar_LANG}/eServiceWebPostPaidBillAISPostpaidMessage.txt
+Resource          ${ar_LANG}/eServiceWebPostPaidBillAISPostpaidMessage.txt
 Resource          ../Resource/ResourceKeywords.txt
 Resource          ../../KeywordsDuplicate/KeywordsDuplicate.txt
 
