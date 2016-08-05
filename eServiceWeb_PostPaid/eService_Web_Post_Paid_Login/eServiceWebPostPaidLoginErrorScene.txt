@@ -89,6 +89,3 @@ test
     Sleep    2
     Click Web Element    ${CancelOtp}
     Element Text Should Be    ${MobileNumber}    ${EmptyMobileNumber}
-
-[Test_Login]
-    Login

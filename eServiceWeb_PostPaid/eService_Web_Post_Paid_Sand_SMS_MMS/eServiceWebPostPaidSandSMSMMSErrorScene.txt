@@ -4,13 +4,13 @@ Resource          Resource/eServiceWebPostPaidSandSMSMMSResource.txt
 
 *** Test Cases ***
 [F07-209]eServiceWeb_PO_Service_SendSMS_NoFillAny_Immediate
-    Open Browser    ${eServiceURL}    ${BROWSER}
+    Open Browser    ${eServiceUrl}    ${BROWSER}
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
     Login
     Click Web Element    ${btnService}
-    sleep	\	\	\	    2
+    sleep    2
     Click Web Element    ${btnServiceSendSMSMMS}
     sleep    2
     Click Web Element    ${btnOKSMSMMS}
