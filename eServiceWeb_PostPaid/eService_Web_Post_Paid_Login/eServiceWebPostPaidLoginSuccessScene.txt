@@ -1,11 +1,9 @@
 *** Settings ***
 Resource          Resource/eServiceWebPostPaidLoginResource.txt
-Resource          ${LANG}/eServiceWebPostPaidLoginMessage.txt
-Resource          ../Resource/ResourceKeywords.txt
 
 *** Test Cases ***
 [S01-001]eServiceWeb-PO-LoginSuccess
-    Open Browser    ${eServiceURL}    gc
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}

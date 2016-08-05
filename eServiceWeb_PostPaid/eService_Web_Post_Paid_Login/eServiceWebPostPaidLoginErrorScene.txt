@@ -1,38 +1,35 @@
 *** Settings ***
 Resource          Resource/eServiceWebPostPaidLoginResource.txt
-Resource          ${LANG}/eServiceWebPostPaidLoginMessage.txt
-Resource          ../../KeywordsDuplicate/KeywordsDuplicate.txt
-Resource          ../Resource/ResourceKeywords.txt
 
 *** Test Cases ***
 [F01-001]eServiceWeb-PO-Login-NumberNotComplete
-    Open Browser    ${eServiceURL}    ${BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
     Input Web Text    ${MobileNumber}    090546798
     Click Web Element    ${GetOTP}
-    Element Text Should Be    ${DialogMessage}    ${ERROR_NumberNotComplete}
+    Element Text Should Be    ${DialogMessage}    ${ERROR_MessageNumberNotComplete}
     Click Web Element    ${DialogClose}
     Close Browser
 
 [F01-002]eServiceWeb-PO-Login-NumberDtac
-    Open Browser    ${eServiceURL}    ${BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
     Input Web Text    ${MobileNumber}    0944835961
     Click Web Element    ${GetOTP}
     Wait Web Until Page Contains Element    ${Tooltip}
-    Element Text Should Be    ${Tooltip}    ${ERRROR_NumberDtac}
+    Element Text Should Be    ${Tooltip}    ${ERROR_MessageNumberDtac}
     Close Browser
 
 [F01-003]eServiceWeb-PO-Login-OtpNotcomplete
-    Open Browser    ${eServiceURL}    ${BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
-    Input Web Text    ${MobileNumber}    0613851273
+    Input Web Text    ${MobileNumber}    ${lo_adb:RUN_3PO_1}
     Click Web Element    ${GetOTP}
     Sleep    2
     Input Web Text    ${InputOTP}    123
@@ -40,11 +37,11 @@ Resource          ../Resource/ResourceKeywords.txt
     Close Browser
 
 [F01-006]eServiceWeb-PO-Login-InputOtpWithCharacter
-    Open Browser    ${eServiceURL}    ${BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
-    Input Web Text    ${MobileNumber}    0613851273
+    Input Web Text    ${MobileNumber}    ${lo_adb:RUN_3PO_1}
     Click Web Element    ${GetOTP}
     Sleep    2
     Input Web Text    ${InputOTP}    a
@@ -54,38 +51,27 @@ Resource          ../Resource/ResourceKeywords.txt
 
 test
     [Tags]    test
-    Login
-    Selenium2Library.Open Browser    ${eServiceURL}    ${BROWSER}
-    Selenium2Library.Maximize Browser Window
-    Selenium2Library.Select Frame    ${MainIframe}
-    Selenium2Library.Click Element    ${Language}
-    Selenium2Library.Input Text    ${MobileNumber}    ${adb:RUN_3PO_1_Number}
-    Selenium2Library.Click Element    ${GetOTP}
-    ${OTPMessage}    Getsms    AIS    127.0.0.1    1    ${adb:RUN_3PO_1}
-    ${OTP}    getOTPinSMS    ${OTPMessage}
-    Log To Console    ${OTP}
-    Selenium2Library.Input Text    ${InputOTP}    ${OTP}
 
 [F01-004]eServiceWeb-PO-Login-InputWrongOtp
 
 [F01-005]eServiceWeb-PO-Login-NotInputOtp
-    Open Browser    ${eServiceURL}    ${BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
-    Input Web Text    ${MobileNumber}    0613851273
+    Input Web Text    ${MobileNumber}    ${lo_adb:RUN_3PO_1}
     Click Web Element    ${GetOTP}
     Sleep    2
     Element Should Not Be Visible    ${LoginWithOtp}
     Close Browser
 
 [F01-007]eServiceWeb-PO-Login-CancelOtp
-    Open Browser    ${eServiceURL}    ${BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
-    Input Web Text    ${MobileNumber}    0613851273
+    Input Web Text    ${MobileNumber}    ${lo_adb:RUN_3PO_1}
     Click Web Element    ${GetOTP}
     Sleep    2
     Click Web Element    ${CancelOtp}
-    Element Text Should Be    ${MobileNumber}    ${EmptyMobileNumber}
+    Element Text Should Be    ${MobileNumber}    ${EMPTY}
