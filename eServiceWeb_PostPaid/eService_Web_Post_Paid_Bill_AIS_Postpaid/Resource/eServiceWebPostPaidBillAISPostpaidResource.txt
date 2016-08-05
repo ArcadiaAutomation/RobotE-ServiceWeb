@@ -1,5 +1,6 @@
 *** Settings ***
-Resource          ../../Resource/eServiceWebPostPaidResource.txt
+Resource          ../../Resource/ResourceKeywords.txt
+Resource          ../../../KeywordsDuplicate/KeywordsDuplicate.txt
 Resource          ../Repository/eServiceWebPostPaidBillAISPostpaidRepository.txt
 
 *** Keywords ***

@@ -5,8 +5,8 @@ Resource          ../Resource/ResourceKeywords.txt
 Resource          ../../KeywordsDuplicate/KeywordsDuplicate.txt
 
 *** TestCase ***
-[S05-001]eServiceWeb-PO-BillAISPostpaid-NotSelectPaymentType
-    Open Browser    ${eServiceURL}    ${BROWSER}
+[S05-001]eServiceWeb-PO-BillAISPostpaid-Go2Page
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
