@@ -1,5 +1,5 @@
 *** Settings ***
-Resource          ${LANG}/eServiceWebPostPaidSandSMSMMSMessage.txt
+Resource          ${ar_LANG}/eServiceWebPostPaidSandSMSMMSMessage.txt
 Resource          Resource/eServiceWebPostPaidSandSMSMMSResource.txt
 
 *** Test Cases ***
