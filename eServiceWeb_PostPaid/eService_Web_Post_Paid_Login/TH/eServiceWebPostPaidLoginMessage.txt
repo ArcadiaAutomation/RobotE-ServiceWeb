@@ -11,4 +11,3 @@ ${ERROR_MessageVoiceAdd_InsertName}    กรุณากรอกชื่อ
 ${ERROR_MessageVoiceAdd_ThaiOnly}    กรุณากรอกเป็นภาษาไทยเท่านั้น
 ${ERROR_MessageVoiceAdd_IncorrectSpell}    อา-ป้คำอ่านไม่ถูกต้อง กรุณาตรวจสอบอีกครั้งหนึ่ง
 ${ERROR_MessageVoiceAdd_NumberOnly}    กรุณากรอกหมายเลขโทรศัพท์เป็นตัวเลขเท่านั้น
-${EmptyMobileNumber}    ${EMPTY}

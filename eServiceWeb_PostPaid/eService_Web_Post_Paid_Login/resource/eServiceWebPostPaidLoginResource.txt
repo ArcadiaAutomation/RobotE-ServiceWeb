@@ -1,3 +1,6 @@
 *** Settings ***
 Resource          ../../Resource/eServiceWebPostPaidResource.txt
 Resource          ../Repository/eServiceWebPostPaidLoginRepository.txt
+Resource          ../../../KeywordsDuplicate/KeywordsDuplicate.txt
+Resource          ../../Resource/ResourceKeywords.txt
+Resource          ../${ar_LANG}/eServiceWebPostPaidLoginMessage.txt
