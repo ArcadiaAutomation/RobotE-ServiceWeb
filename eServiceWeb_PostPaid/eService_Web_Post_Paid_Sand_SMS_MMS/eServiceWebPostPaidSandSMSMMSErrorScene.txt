@@ -19,7 +19,7 @@ Resource          Resource/eServiceWebPostPaidSandSMSMMSResource.txt
     Close Browser
 
 [F07-210]eServiceWeb_PO_Service_SendSMS_NotCompletNumber_Immediate
-    Open Browser    ${eServiceURL}    ${BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
@@ -36,7 +36,7 @@ Resource          Resource/eServiceWebPostPaidSandSMSMMSResource.txt
     Close Browser
 
 [F07-211]eServiceWeb_PO_Service_SendSMS_FillCharacterInPhoneNumber_Immediate
-    Open Browser    ${eServiceURL}    ${BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
@@ -51,7 +51,7 @@ Resource          Resource/eServiceWebPostPaidSandSMSMMSResource.txt
     Close Browser
 
 [F07-212]eServiceWeb_PO_Service_SendSMS_NotFillAnyNumber_Immediate
-    Open Browser    ${eServiceURL}    ${BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
@@ -68,7 +68,7 @@ Resource          Resource/eServiceWebPostPaidSandSMSMMSResource.txt
     Close Browser
 
 [F07-213]eServiceWeb-PO-Service-SendSMS-NotFillMessage-Immediate
-    Open Browser    ${eServiceURL}    ${BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
@@ -84,7 +84,7 @@ Resource          Resource/eServiceWebPostPaidSandSMSMMSResource.txt
     Close Browser
 
 [F07-214]eServiceWeb-PO-Service-SendSMS-FillCharacterTHMorethan350-Immediate
-    Open Browser    ${eServiceURL}    ${BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
@@ -99,7 +99,7 @@ Resource          Resource/eServiceWebPostPaidSandSMSMMSResource.txt
     Close Browser
 
 [F07-215]eServiceWeb-PO-Service-SendSMS-FillCharacterENMorethan765-Immediate
-    Open Browser    ${eServiceURL}    ${BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
@@ -114,7 +114,7 @@ Resource          Resource/eServiceWebPostPaidSandSMSMMSResource.txt
     Close Browser
 
 [F07-216]eServiceWeb-PO-Service-SendSMS-NotCompletNumber-Future
-    Open Browser    ${eServiceURL}    ${BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
@@ -131,7 +131,7 @@ Resource          Resource/eServiceWebPostPaidSandSMSMMSResource.txt
     Close Browser
 
 [F07-218]eServiceWeb-PO-Service-SendSMS-NotFillAnyNumber-Future
-    Open Browser    ${eServiceURL}    ${BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
@@ -149,7 +149,7 @@ Resource          Resource/eServiceWebPostPaidSandSMSMMSResource.txt
     Close Browser
 
 [F07-217]eServiceWeb-PO-Service-SendSMS-FillCharacterInPhoneNumber-Future
-    Open Browser    ${eServiceURL}    ${BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
@@ -165,7 +165,7 @@ Resource          Resource/eServiceWebPostPaidSandSMSMMSResource.txt
     Close Browser
 
 [F07-219]eServiceWeb-PO-Service-SendSMS-NotFillMessage-Future
-    Open Browser    ${eServiceURL}    ${BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
@@ -181,7 +181,7 @@ Resource          Resource/eServiceWebPostPaidSandSMSMMSResource.txt
     Element Should Contain    ${DialogMessage}    ${ERROR_PleaseMessage}
 
 [F07-220]eServiceWeb-PO-Service-SendSMS-BeforeToDay-Future
-    Open Browser    ${eServiceURL}    ${BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
@@ -204,7 +204,7 @@ Resource          Resource/eServiceWebPostPaidSandSMSMMSResource.txt
     Element Should Contain    ${DialogMessage}    ${ERROR_Message_AfterToDay}
 
 [F07-221]eServiceWeb-PO-Service-SendSMS-MoreThan30DayFromNow-Future
-    Open Browser    ${eServiceURL}    ${BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}

@@ -4,7 +4,7 @@ Resource          Resource/eServiceWebPostPaidServiceVoiceCallingResource.txt
 
 *** Test Cases ***
 [F07-199]eServiceWeb-PO-Service-VoiceCalling-EditOnNonRegisteredNumber
-    Open Browser    ${eServiceURL}    ${BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
@@ -16,7 +16,7 @@ Resource          Resource/eServiceWebPostPaidServiceVoiceCallingResource.txt
     Element Text Should Be    ${SummaryMessage}    ${ERROR_MessageVoiceRegister}
 
 [F07-200]eServiceWeb-PO-Service-VoiceCalling-RegisterOnRegisteredNumber
-    Open Browser    ${eServiceURL}    ${BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
@@ -28,7 +28,7 @@ Resource          Resource/eServiceWebPostPaidServiceVoiceCallingResource.txt
     Element Text Should Be    ${SummaryMessage}    ${ERROR_MessageVoiceAdd/Edit}
 
 [F07-201]eServiceWeb-PO-Service-VoiceCalling-CancelOnNonRegisteredNumber
-    Open Browser    ${eServiceURL}    ${BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
@@ -40,7 +40,7 @@ Resource          Resource/eServiceWebPostPaidServiceVoiceCallingResource.txt
     Element Text Should Be    ${SummaryMessage}    ${ERROR_MessageVoiceAdd/Edit}
 
 [F07-202]eServiceWeb-PO-Service-VoiceCalling-EditWithoutChangeData
-    Open Browser    ${eServiceURL}    ${BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
@@ -54,7 +54,7 @@ Resource          Resource/eServiceWebPostPaidServiceVoiceCallingResource.txt
     Element Text Should Be    ${DialogMessage}    ${ERROR_MessageVoiceAdd_NoDataUpdate}
 
 [F07-203]eServiceWeb-PO-Service-VoiceCalling-AddWithOnlyInputName
-    Open Browser    ${eServiceURL}    ${BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
@@ -69,7 +69,7 @@ Resource          Resource/eServiceWebPostPaidServiceVoiceCallingResource.txt
     Element Text Should Be    ${DialogMessage}    ${ERROR_MessageVoiceAdd_InsertMobile}
 
 [F07-204]eServiceWeb-PO-Service-VoiceCalling-AddWithOnlyInputSpell
-    Open Browser    ${eServiceURL}    ${BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
@@ -85,7 +85,7 @@ Resource          Resource/eServiceWebPostPaidServiceVoiceCallingResource.txt
     Element Text Should Be    ${DialogMessage}    ${ERROR_MessageVoiceAdd_InsertName}
 
 [F07-205]eServiceWeb-PO-Service-VoiceCalling-AddWithOnlyInputNumber
-    Open Browser    ${eServiceURL}    ${BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
@@ -100,7 +100,7 @@ Resource          Resource/eServiceWebPostPaidServiceVoiceCallingResource.txt
     Element Text Should Be    ${DialogMessage}    ${ERROR_MessageVoiceAdd_InsertName}
 
 [F07-206]eServiceWeb-PO-Service-VoiceCalling-AddWithEngSpell
-    Open Browser    ${eServiceURL}    ${BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
@@ -113,7 +113,7 @@ Resource          Resource/eServiceWebPostPaidServiceVoiceCallingResource.txt
     Element Text Should Be    ${DialogMessage}    ${ERROR_MessageVoiceAdd_ThaiOnly}
 
 [F07-207]eServiceWeb-PO-Service-VoiceCalling-AddWithIncorrectSpell
-    Open Browser    ${eServiceURL}    ${BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
@@ -131,7 +131,7 @@ Resource          Resource/eServiceWebPostPaidServiceVoiceCallingResource.txt
     Element Text Should Be    ${SummaryMessage}    ${ERROR_MessageVoiceAdd_IncorrectSpell}
 
 [F07-208]eServiceWeb-PO-Service-VoiceCalling-AddWithNonNumericalNumber
-    Open Browser    ${eServiceURL}    ${BROWSER}
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${MainIframe}
     Click Web Element    ${Language}
