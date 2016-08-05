@@ -1,6 +1,5 @@
 *** Settings ***
 Resource          ${LANG}/eServiceWebPostPaidVoiceCallingMessage.txt
-Resource          ../Resource/ResourceKeywords.txt
 Resource          Resource/eServiceWebPostPaidServiceVoiceCallingResource.txt
 
 *** Test Cases ***

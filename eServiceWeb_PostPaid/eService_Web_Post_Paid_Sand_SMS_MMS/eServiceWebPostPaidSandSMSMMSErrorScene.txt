@@ -10,7 +10,7 @@ Resource          Resource/eServiceWebPostPaidSandSMSMMSResource.txt
     Click Web Element    ${Language}
     Login
     Click Web Element    ${btnService}
-    sleep	\	\	\	    2
+    sleep    \    \    \    2
     Click Web Element    ${btnServiceSendSMSMMS}
     sleep    2
     Click Web Element    ${btnOKSMSMMS}
@@ -195,6 +195,29 @@ Resource          Resource/eServiceWebPostPaidSandSMSMMSResource.txt
     Input Web Text    ${InputSMS_Message}    Hello
     Select From List    ${Date_Future}    0
     Select From List    ${Month_Future}    0
+    Select From List    ${Year_Future}    0
+    Select From List    ${Time_Future}    0
+    Select From List    ${Hrs_Future}    0
+    sleep    2
+    Click Web Element    ${btnOKSMSMMS}
+    sleep    2
+    Element Should Contain    ${DialogMessage}    ${ERROR_Message_AfterToDay}
+
+[F07-221]eServiceWeb-PO-Service-SendSMS-MoreThan30DayFromNow-Future
+    Open Browser    ${eServiceURL}    ${BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
+    Login
+    Click Web Element    ${btnService}
+    sleep    2
+    Click Web Element    ${btnServiceSendSMSMMS}
+    sleep    2
+    Click Web Element    ${btnSMS_Future}
+    Input Web Text    ${ServiceSMSMMS_InsertNumber1}    0923026951
+    Input Web Text    ${InputSMS_Message}    Hello
+    Select From List    ${Date_Future}    29
+    Select From List    ${Month_Future}    1
     Select From List    ${Year_Future}    0
     Select From List    ${Time_Future}    0
     Select From List    ${Hrs_Future}    0
