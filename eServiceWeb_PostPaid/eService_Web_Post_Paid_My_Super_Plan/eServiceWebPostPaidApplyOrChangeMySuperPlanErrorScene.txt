@@ -2,7 +2,7 @@
 Resource          Resource/eServiceWebPostPaidApplyOrChangeMySuperPlanResource.txt
 
 *** Test Cases ***
-[F03-008]eServiceWeb-PO-MysuperPlan
+[F03-008]eServiceWeb-PO-MysuperPlan-NotSelectpostPaidPackage
     Open Browser    ${eServiceURL}    ${ar_BROWSER}
     Maximize Browser Window
     Select Frame    ${MainIframe}
@@ -17,7 +17,28 @@ Resource          Resource/eServiceWebPostPaidApplyOrChangeMySuperPlanResource.t
     Sleep    3
     Click Image    ${MySuperPlanImage}
     Sleep    3
-    Click Web Element    ${ConfirmMySuperPlan}
-    Sleep    2
+    Click Web Element    ${MainPacKage}
+    Sleep    3
     Element Text Should Be    ${MySuperPlanDialogMessage}    ${ERROR_NotSelectMySuperPlanPackage}
-    Close Browser
+
+[F03-009]eServiceWeb-PO-MysuperPlan-NotSelectMaindPackage
+    Open Browser    ${eServiceURL}    ${ar_BROWSER}
+    Maximize Browser Window
+    Select Frame    ${MainIframe}
+    Click Web Element    ${Language}
+    Login    ${lo_adb:RUN_3PO_1_Number}    ${lo_IPAppium}    ${lo_adb:RUN_3PO_1}
+    Sleep    2
+    Element Should Be Visible    ${MainPageCustomerNumber}
+    Sleep    5
+    Click Web Element    ${MenuPackage}
+    Sleep    3
+    Click Web Element    ${SubMenuMySuperPlan}
+    Sleep    3
+    Click Image    ${MySuperPlanImage}
+    Sleep    3
+    Click Web Element    ${PostPaidPackage}
+    Sleep    2
+    Click Web Element    ${OnTopPackageMenu}
+    Sleep    1
+    Click Web Element    ${OnTopacKage}
+    Element Text Should Be    ${MySuperPlanDialogMessage}    ${ERROR_NotSelectMainPackage}
