@@ -1,0 +1,6 @@
+*** Settings ***
+Resource          ../../Resource/eServiceWebPostPaidResource.txt
+Resource          ../Repository/eServiceWebPostPaidApplyOrChangeMySuperPlanRepository.txt
+Resource          ../../../KeywordsDuplicate/KeywordsDuplicate.txt
+Resource          ../../Resource/ResourceKeywords.txt
+Resource          ../../eService_Web_Post_Paid_My_Super_Plan/${ar_LANG}/eServiceWebPostPaidApplyOrChangeMySuperPlanMessage.txt
